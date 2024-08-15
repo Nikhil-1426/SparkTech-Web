@@ -4,7 +4,8 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getAuth, signOut } from 'firebase/auth';
 import './App.css';
-import './LandingPage.css' // Assuming you use the same CSS file for consistency
+import './LandingPage.css';
+import logo from './assets/logo.png'; 
 
 function LandingPage() {
   const navigate = useNavigate();
@@ -23,7 +24,7 @@ function LandingPage() {
     <div className="App">
       <header className="App-header">
         <div className="header-logo">
-          <img src="https://via.placeholder.com/50" alt="Government Logo" />
+          <img src={logo} alt="Government Logo" style={{ width: '70px', height: '60px' }} />
           <h1>Government of Delhi</h1>
         </div>
         <nav className="App-nav">

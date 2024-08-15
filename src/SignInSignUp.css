@@ -80,6 +80,10 @@ body {
   .form button:hover {
     background-color: #003366;
   }
+
+  .toggle-button {
+    margin-left: 10px; /* Adjust the value as needed */
+  }
   
   .footer {
     background-color: #003366;
