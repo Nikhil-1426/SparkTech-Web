@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth';
 import './SignInSignUp.css';
+import logo from './assets/logo.png';
 
 function SignInSignUp() {
   const [isSignUp, setIsSignUp] = useState(false);
@@ -40,7 +41,7 @@ function SignInSignUp() {
     <div className="container">
       <header className="header">
         <div className="logo">
-          <img src="https://via.placeholder.com/50" alt="Government Logo" />
+          <img src={logo} alt="Government Logo" style={{ width: '70px', height: '80px' }} />
           <h1>Government of Delhi</h1>
         </div>
       </header>
@@ -81,8 +82,11 @@ function SignInSignUp() {
             {error && <p className="error-message">{error}</p>}
           </form>
           <p>
-            {isSignUp ? 'Already have an account?' : 'Don’t have an account?'}
-            <button onClick={() => setIsSignUp(!isSignUp)}>
+            {isSignUp ? 'Already have an account ?' : 'Don’t have an account ?'}
+            <button 
+            className="toggle-button"
+            onClick={() => setIsSignUp(!isSignUp)}
+            >
               {isSignUp ? 'Sign In' : 'Sign Up'}
             </button>
           </p>
