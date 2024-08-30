@@ -1,0 +1,109 @@
+/* src/Services.css */
+
+/* General Styles */
+.App {
+    text-align: center;
+  }
+  
+  .App-header {
+    background-color: #003366;
+    padding: 10px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .App-nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .App-nav li {
+    margin: 0 10px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .App-nav a,
+  .sign-out-link {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.5;
+  }
+  
+  .App-nav a:hover,
+  .sign-out-link:hover {
+    background-color: #555;
+  }
+  
+  .sign-out-link {
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .header-logo h1 {
+    margin: 0;
+  }
+  
+  .App-main {
+    padding: 20px;
+  }
+  
+  .services-intro {
+    background-color: #e6f7ff;
+    padding: 40px;
+    margin: 20px 0;
+    border-radius: 8px;
+  }
+  
+  .services-intro h2 {
+    color: #003366;
+  }
+  
+  .services-intro p {
+    color: #333;
+    margin: 20px 0;
+  }
+  
+  .services-list {
+    text-align: left;
+    margin: 20px 0;
+  }
+  
+  .services-list h3 {
+    color: #003366;
+  }
+  
+  .services-list .service {
+    margin-bottom: 20px;
+  }
+  
+  .App-footer {
+    background-color: #003366;
+    color: white;
+    padding: 20px;
+    margin-top: 20px;
+  }
+  
+  .App-footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+  }
+  
+  .App-footer a:hover {
+    text-decoration: underline;
+  }
+  
