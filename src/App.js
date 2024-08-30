@@ -4,7 +4,8 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import SignInSignUp from './SignInSignUp'; // Import your sign-in/sign-up component
 import LandingPage from './LandingPage';
-import './App.css' // Import your landing page component
+import './App.css';
+import './firebase'; // Import your landing page component
 
 function App() {
   return (
