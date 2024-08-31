@@ -1,4 +1,4 @@
-/* src/Services.css */
+/* src/ContactUs.css */
 
 /* General Styles */
 .App {
@@ -61,33 +61,61 @@
     padding: 20px;
   }
   
-  .services-intro {
+  .contact-intro {
     background-color: #b9e4f8d4;
     padding: 40px;
     margin: 20px 0;
     border-radius: 8px;
   }
   
-  .services-intro h2 {
+  .contact-intro h2 {
     color: #003366;
   }
   
-  .services-intro p {
+  .contact-intro p {
     color: #333;
     margin: 20px 0;
   }
   
-  .services-list {
+  .contact-form {
     text-align: left;
-    margin: 20px 0;
+    margin: 20px auto;
+    max-width: 600px;
   }
   
-  .services-list h3 {
+  .contact-form h3 {
     color: #003366;
   }
   
-  .services-list .service {
-    margin-bottom: 20px;
+  .contact-form form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .contact-form label {
+    margin: 10px 0 5px;
+    font-weight: bold;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+  }
+  
+  .contact-form .submit-button {
+    padding: 10px 20px;
+    background-color: #005b99;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .contact-form .submit-button:hover {
+    background-color: #003366;
   }
   
   .App-footer {

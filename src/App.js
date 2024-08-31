@@ -4,6 +4,7 @@ import SignInSignUp from './SignInSignUp'; // Import your sign-in/sign-up compon
 import LandingPage from './LandingPage';
 import Services from './Services'; // Import the Services component
 import AboutUs from './AboutUs';
+import ContactUs from './ContactUs'; // Import the ContactUs component
 import './App.css';
 import './firebase';
 
@@ -15,6 +16,7 @@ function App() {
         <Route path="/landing" element={<LandingPage />} />  {/* Landing page */}
         <Route path="/services" element={<Services />} />  {/* Services page */}
         <Route path="/about-us" element={<AboutUs />} />  {/* About Us page */}
+        <Route path="/contact-us" element={<ContactUs />} />  {/* Contact Us page */}
       </Routes>
     </Router>
   );
