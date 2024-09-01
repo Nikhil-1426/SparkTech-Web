@@ -29,7 +29,7 @@ function LandingPage() {
         </div>
         <nav className="App-nav">
           <ul>
-            <li><a href="#home">Home</a></li>
+            <li><a href="/landing">Home</a></li>
             <li><a href="/dashboard">Dashboard</a></li>
             <li><a href="/about-us">About Us</a></li>
             <li><a href="/services">Services</a></li>

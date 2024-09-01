@@ -15,6 +15,7 @@ function Services() {
         <nav className="App-nav">
           <ul>
             <li><a href="/landing">Home</a></li>
+            <li><a href="/dashboard">Dashboard</a></li>
             <li><a href="/about-us">About Us</a></li>
             <li><a href="/services">Services</a></li>
             <li><a href="/contact-us">Contact</a></li>
