@@ -43,7 +43,7 @@ def analyze_graph():
         # Create a Gemini model instance for image analysis
         model = genai.GenerativeModel('gemini-1.5-pro')
 
-        prompt="What are the key trends in this graph?"
+        prompt="What are the key trends in this graph in detail?"
 
         # Generate content based on the image
         response = model.generate_content([img,prompt])
