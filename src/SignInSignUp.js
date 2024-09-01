@@ -1,14 +1,15 @@
 // src/SignInSignUp.js
-
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth';
-// import { auth } from './firebase';
+import { db } from './firebase'; // Import the Firestore instance
+import { collection, addDoc } from 'firebase/firestore'; // Firestore functions
 import './SignInSignUp.css';
 import logo from './assets/logo.png';
 
 function SignInSignUp() {
   const [isSignUp, setIsSignUp] = useState(false);
+  const [name, setName] = useState(''); // New state for name
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -17,9 +18,9 @@ function SignInSignUp() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     const auth = getAuth();
-    
+
     try {
       if (isSignUp) {
         if (password !== confirmPassword) {
@@ -27,11 +28,20 @@ function SignInSignUp() {
           return;
         }
         // Sign up user
-        await createUserWithEmailAndPassword(auth, email, password);
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        
+        // Add user data to Firestore
+        await addDoc(collection(db, 'Sparks'), {
+          name: name, // Add name field
+          email: email,
+          uid: userCredential.user.uid
+        });
+
       } else {
         // Sign in user
         await signInWithEmailAndPassword(auth, email, password);
       }
+      
       navigate('/landing'); // Redirect to the landing page after successful login/signup
     } catch (error) {
       setError(error.message); // Handle errors (e.g., invalid email/password)
@@ -50,6 +60,17 @@ function SignInSignUp() {
         <section className="form-section">
           <h2>{isSignUp ? 'Sign Up' : 'Sign In'}</h2>
           <form className="form" onSubmit={handleSubmit}>
+            {isSignUp && (
+              <label>
+                Name:
+                <input
+                  type="text"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  required={isSignUp}
+                />
+              </label>
+            )}
             <label>
               Email:
               <input
@@ -84,9 +105,9 @@ function SignInSignUp() {
           </form>
           <p>
             {isSignUp ? 'Already have an account ?' : 'Don’t have an account ?'}
-            <button 
-            className="toggle-button"
-            onClick={() => setIsSignUp(!isSignUp)}
+            <button
+              className="toggle-button"
+              onClick={() => setIsSignUp(!isSignUp)}
             >
               {isSignUp ? 'Sign In' : 'Sign Up'}
             </button>
@@ -101,6 +122,3 @@ function SignInSignUp() {
 }
 
 export default SignInSignUp;
-
-
-
