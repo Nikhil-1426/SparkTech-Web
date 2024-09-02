@@ -1,0 +1,92 @@
+/* Top Bar Styles */
+.App-header {
+  background-color: #003366;
+  padding: 10px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: none; /* Remove border */
+  width: 100%; /* Occupy the entire page */
+  height: 60px; /* Set height to match the landing page top bar */
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  margin-right: auto; /* Align logo to the left */
+}
+
+.header-logo img {
+  margin-right: 10px;
+}
+
+.App-nav ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.App-nav li {
+  margin: 0 10px; /* Adjust margin to reduce spacing */
+  display: flex; /* Align items vertically */
+  align-items: center; /* Center vertically */
+}
+
+.App-nav a,
+.sign-out-link {
+  text-decoration: none;
+  color: #ffffff; /* Navigation links color */
+  padding: 10px 15px; /* Padding for consistency */
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  font-size: 16px; /* Set font size for consistency */
+  font-weight: bold; /* Set font weight for consistency */
+  line-height: 1.5; /* Ensure vertical alignment */
+}
+
+.App-nav a:hover,
+.sign-out-link:hover {
+  background-color: #555; /* Darker shade on hover */
+}
+
+/* Center the Dashboard sign */
+.dashboard-title {
+  text-align: center; /* Center the text horizontally */
+  margin: 20px 0; /* Add some vertical margin */
+}
+
+/* Table Styles */
+.dashboard-table {
+  width: 90%; /* Increased width to make the table larger */
+  border-collapse: collapse;
+  margin: 20px auto; /* Center the table */
+  font-size: 16px;
+  text-align: center;
+}
+
+.dashboard-table th,
+.dashboard-table td {
+  padding: 12px 15px;
+  border: 1px solid #ddd; /* Add border for all cells */
+}
+
+.dashboard-table th {
+  background-color: #003366;
+  color: white;
+  font-weight: bold;
+}
+
+.dashboard-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Table Header and Row Hover Effects */
+.dashboard-table tr:hover {
+  background-color: #e0e0e0;
+}
+
+.dashboard-table td {
+  color: #333;
+}
