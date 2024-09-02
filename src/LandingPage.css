@@ -68,6 +68,13 @@ body {
   font-weight: bold;
 }
 
+/* src/LandingPage.css */
+.graph-section {
+  margin-top: 40px;
+  text-align: center;
+}
+
+
 .App-main {
   padding: 20px;
 }

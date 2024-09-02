@@ -54,7 +54,7 @@ import joblib
 import os
 
 # Load the data
-data = pd.read_excel(r"C:/Users/Aditi/Downloads/temperature1_data.xlsx", 
+data = pd.read_excel(r"C:/Users/Nikhil/Nikhil Data/Coding/Projects/SIH' 24/temperature1_data.xlsx", 
                      index_col='Date', 
                      parse_dates=['Date'])
 data = data.values
