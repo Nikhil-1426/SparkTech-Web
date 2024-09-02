@@ -45,14 +45,14 @@ export default App;
 //     }
 //   };
 
-//   const analyzeGraph = async () => {
-//     try {
-//       const response = await axios.post('http://localhost:5000/analyze-graph', {});
-//       setAnalysisResult(response.data.analysis);
-//     } catch (error) {
-//       console.error('Error analyzing graph:', error);
-//     }
-//   };
+  // const analyzeGraph = async () => {
+  //   try {
+  //     const response = await axios.post('http://localhost:5000/analyze-graph', {});
+  //     setAnalysisResult(response.data.analysis);
+  //   } catch (error) {
+  //     console.error('Error analyzing graph:', error);
+  //   }
+  // };
 
 //   useEffect(() => {
 //     fetchGraph(); // Fetch the graph image on component mount
