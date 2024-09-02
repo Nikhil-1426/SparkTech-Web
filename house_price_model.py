@@ -1,60 +1,13 @@
-# import numpy as np
-# import pandas as pd
-# from sklearn.model_selection import train_test_split
-# from sklearn.linear_model import LinearRegression
-# import joblib
-# import matplotlib.pyplot as plt
-# import os
-
-# # Create the 'static' directory if it doesn't exist
-# if not os.path.exists('static'):
-#     os.makedirs('static')
-
-# # Load your dataset
-# data = pd.DataFrame({
-#     'size': [1400, 1600, 1700, 1875, 1100, 1550, 2350, 2450, 1425, 1700],
-#     'bedrooms': [3, 3, 3, 4, 2, 3, 4, 4, 3, 3],
-#     'price': [245000, 312000, 279000, 308000, 199000, 219000, 405000, 324000, 319000, 255000]
-# })
-
-# # Feature matrix X and target variable y
-# X = data[['size', 'bedrooms']]
-# y = data['price']
-
-# # Split the data
-# X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-
-# # Create and train the model
-# model = LinearRegression()
-# model.fit(X_train, y_train)
-
-# # Save the model
-# joblib.dump(model, 'house_price_model.pkl')
-
-# # Create the graph
-# fig, ax = plt.subplots()
-# ax.scatter(data['size'], data['price'], color='blue', label='Price vs Size')
-# ax.set_xlabel('Size (sq ft)')
-# ax.set_ylabel('Price ($)')
-# ax.set_title('House Prices')
-# ax.legend()
-
-# # Save the graph to a file
-# plt.savefig('static/house_price_graph.png')
-# plt.close(fig)
-
-
 import pandas as pd
 import numpy as np
+import os
+import joblib
 from sklearn.preprocessing import MinMaxScaler
 from keras.models import Sequential
 from keras.layers import LSTM, Dense
 import matplotlib.pyplot as plt
-import joblib
-import os
 
-# Load the data
-data = pd.read_excel(r"C:/Users/Nikhil/Nikhil Data/Coding/Projects/SIH' 24/temperature1_data.xlsx", 
+data = pd.read_excel(r"C:/Users/Aditi/Downloads/temperature1_data.xlsx", 
                      index_col='Date', 
                      parse_dates=['Date'])
 data = data.values
@@ -98,14 +51,13 @@ model.compile(optimizer='adam', loss='mean_squared_error')
 # Train the model
 model.fit(X_train, y_train, batch_size=32, epochs=100)
 
-# Save the model
 joblib.dump(model, 'house_price_model.pkl')
 
 # Make predictions
 train_predict = model.predict(X_train)
 test_predict = model.predict(X_test)
 
-# Predict the temperature for the next 15 days
+# # Predict the temperature for the next 15 days
 last_15_days = data[-15:, 0]  # Only consider the 'Temperature' column
 last_15_days = last_15_days.reshape((1, last_15_days.shape[0], 1))
 predicted_temperature = model.predict(last_15_days)
@@ -113,10 +65,8 @@ predicted_temperature = scaler.inverse_transform(predicted_temperature)
 
 print('Predicted temperature for the next 15 days:', predicted_temperature)
 
-# Ensure the 'static' directory exists
 os.makedirs('static', exist_ok=True)
 
-# Plot the data
 plt.figure(figsize=(10,6))
 plt.plot(np.arange(700, 716), scaler.inverse_transform(data[700:716, 0].reshape(-1, 1)), color='blue', label='Actual Temperature')
 plt.plot(np.arange(715, 731), scaler.inverse_transform(test_predict[-16:, 0].reshape(-1, 1)), color='red', label='Predicted Temperature', linestyle='--')
@@ -125,9 +75,68 @@ plt.xlabel('Days')
 plt.ylabel('Temperature (°C)')
 plt.legend()
 
-# Save the figure before showing it
 plt.savefig('static/house_price_graph.png')
-
-# Display the plot
 plt.show()
 
+
+
+
+# Load the humidity data
+humidity_data = pd.read_excel(r"C:/Users/Aditi/Downloads/humidity1_data.xlsx", 
+                             index_col='Date', 
+                             parse_dates=['Date'])
+humidity_data = humidity_data.values
+
+# Scale the humidity data
+humidity_scaler = MinMaxScaler()
+humidity_data = humidity_scaler.fit_transform(humidity_data)
+
+# Split the humidity data into training and testing sets
+humidity_train_size = int(len(humidity_data) * 0.8)
+humidity_train_data = humidity_data[0:humidity_train_size]
+humidity_test_data = humidity_data[humidity_train_size:]
+
+# Create the humidity training and testing datasets
+humidity_X_train, humidity_y_train = create_dataset(humidity_train_data, time_step)
+humidity_X_test, humidity_y_test = create_dataset(humidity_test_data, time_step)
+
+# Reshape the humidity data
+humidity_X_train = humidity_X_train.reshape(humidity_X_train.shape[0], humidity_X_train.shape[1], 1)
+humidity_X_test = humidity_X_test.reshape(humidity_X_test.shape[0], humidity_X_test.shape[1], 1)
+
+# Create the humidity LSTM model
+humidity_model = Sequential()
+humidity_model.add(LSTM(units=50, return_sequences=True, input_shape=(humidity_X_train.shape[1], 1)))
+humidity_model.add(LSTM(units=50, return_sequences=False))
+humidity_model.add(Dense(1))
+
+# Compile the humidity model
+humidity_model.compile(optimizer='adam', loss='mean_squared_error')
+
+# Train the humidity model
+humidity_model.fit(humidity_X_train, humidity_y_train, batch_size=32, epochs=100)
+
+joblib.dump(model, 'house_price_model1.pkl')
+
+# Make humidity predictions
+humidity_train_predict = humidity_model.predict(humidity_X_train)
+humidity_test_predict = humidity_model.predict(humidity_X_test)
+
+# Predict the humidity for the next 15 days
+humidity_last_15_days = humidity_data[-15:, 0]  # Only consider the 'Humidity' column
+humidity_last_15_days = humidity_last_15_days.reshape((1, humidity_last_15_days.shape[0], 1))
+humidity_predicted = humidity_model.predict(humidity_last_15_days)
+humidity_predicted = humidity_scaler.inverse_transform(humidity_predicted)
+
+print('Predicted humidity for the next 15 days:', humidity_predicted)
+
+plt.figure(figsize=(10,6))
+plt.plot(np.arange(700, 716), humidity_scaler.inverse_transform(humidity_data[700:716, 0].reshape(-1, 1)), color='blue', label='Actual Humidity')
+plt.plot(np.arange(715, 731), humidity_scaler.inverse_transform(humidity_test_predict[-16:, 0].reshape(-1, 1)), color='red', label='Predicted Humidity', linestyle='--')
+plt.plot(np.arange(715, 731), humidity_scaler.inverse_transform(humidity_data[715:, 0].reshape(-1, 1)), color='green', label='Actual Recorded Data', linestyle='-')
+plt.xlabel('Days')
+plt.ylabel('Humidity (%)')
+plt.legend()
+
+plt.savefig('static/house_price_graph1.png')
+plt.show()
