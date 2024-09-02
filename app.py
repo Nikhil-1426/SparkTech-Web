@@ -14,7 +14,8 @@ api_key = "AIzaSyAdGwGGhCx7vmy4trLZKEJftgQ2VZqIlbI"
 genai.configure(api_key=api_key)
 
 # Load the model
-model = joblib.load('house_price_model.pkl')
+model1 = joblib.load('house_price_model.pkl')
+model2 = joblib.load('house_price_model1.pkl')
 
 
 @app.route('/predict', methods=['POST'])
@@ -37,16 +38,21 @@ def analyze_graph():
         graph_path = 'static/house_price_graph.png'
         print(f"Analyzing graph at: {graph_path}")
 
+        graph_path2 = 'static/house_price_graph1.png'
+        print(f"Analyzing graph at: {graph_path2}")
+
         # Open the image file using PIL
         img = Image.open(graph_path)
+        img2 = Image.open(graph_path2)
 
         # Create a Gemini model instance for image analysis
         model = genai.GenerativeModel('gemini-1.5-pro')
 
-        prompt="What are the key trends in this graph in detail?"
+        prompt=("Analyze the trends and relationships between the Y-axes of the two graphs provided. "
+                  "Compare any correlations, differences, and notable patterns.")
 
         # Generate content based on the image
-        response = model.generate_content([img,prompt])
+        response = model.generate_content([img, img2, prompt])
         analysis_result = response.text
 
         return jsonify({'analysis': analysis_result})
