@@ -1,99 +1,4 @@
-/* src/SignInSignUp.css */
-
-/* body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-  }
-  
-  .container {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-  
-  .header {
-    background-color: #003366;
-    padding: 10px;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .logo {
-    display: flex;
-    align-items: center;
-  }
-  
-  .logo img {
-    margin-right: 10px;
-  }
-  
-  .main-content {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-  }
-  
-  .form-section {
-    background-color: #ffffff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
-  }
-  
-  .form-section h2 {
-    color: #003366;
-  }
-  
-  .form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .form label {
-    margin-bottom: 15px;
-  }
-  
-  .form input {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .form button {
-    padding: 10px;
-    background-color: #005b99;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .form button:hover {
-    background-color: #003366;
-  }
-
-  .toggle-button {
-    margin-left: 10px; 
-  }
-  
-  .footer {
-    background-color: #003366;
-    color: white;
-    padding: 20px;
-    text-align: center;
-  } */
-  
-
-  /* SignInSignUp.css */
+/* SignInSignUp.css */
 
 body {
   font-family: Arial, sans-serif;
@@ -134,9 +39,9 @@ body {
 .logo {
   position: absolute;
   top: 20px;
-  left: 20px;
-  width: 100px;
-  height: 100px;
+  left: 40px;
+  width: 250px;
+  height: 250px;
   background: white; /* Background color for logo */
   border-radius: 50%;
   display: flex;
@@ -162,11 +67,11 @@ body {
 }
 
 .shape1 {
-  background: rgba(135, 206, 250, 0.6); /* LightSkyBlue */
+  background: rgba(105, 195, 251, 0.6); /* LightSkyBlue */
   width: 250px;
   height: 250px;
-  top: 20%;
-  left: 10%;
+  top: 50%;
+  left: 4%;
   border-radius: 30%; /* Squircle shape */
 }
 
@@ -260,7 +165,7 @@ body {
 }
 
 .form input {
-  width: 100%;
+  width: 85%;
   padding: 0.75rem;
   border: 1px solid #ddd;
   border-radius: 4px;
@@ -271,7 +176,7 @@ body {
   padding: 0.75rem;
   border: none;
   border-radius: 4px;
-  background-color: #007bff;
+  background-color: #76b5f9;
   color: white;
   font-size: 1rem;
   cursor: pointer;
@@ -279,7 +184,7 @@ body {
 }
 
 .form button:hover {
-  background-color: #0056b3;
+  background-color: #7bb9fb;
 }
 
 .error-message {

@@ -132,7 +132,7 @@ import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } f
 import { db } from './firebase'; // Import the Firestore instance
 import { collection, addDoc } from 'firebase/firestore'; // Firestore functions
 import './SignInSignUp.css';
-import logo from './assets/logo2.jpg'; // Import logo image
+import logo from './assets/logo3.jpg'; // Import logo image
 
 function SignInSignUp() {
   const [isSignUp, setIsSignUp] = useState(false);
