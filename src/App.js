@@ -1,4 +1,4 @@
-/*import React from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import SignInSignUp from './SignInSignUp'; // Import your sign-in/sign-up component
 import LandingPage from './LandingPage';
@@ -8,26 +8,26 @@ import ContactUs from './ContactUs'; // Import the ContactUs component
 import Dashboard from './Dashboard'; //Import the Dashboard component
 import './App.css';
 import './firebase';
-*/
-
-//function App() {
-  //return (
-    //<Router>
-      //<Routes>
-        //<Route path="/" element={<SignInSignUp />} />  {/* Signup/Signin page */}
-        //<Route path="/landing" element={<LandingPage />} />  {/* Landing page */}
-        //<Route path="/services" element={<Services />} />  {/* Services page */}
-        //<Route path="/about-us" element={<AboutUs />} />  {/* About Us page */}
-        //<Route path="/contact-us" element={<ContactUs />} />  {/* Contact Us page */}
-        //<Route path="/dashboard" element={<Dashboard />} /> {/* Dashboard page */}
-      //</Routes>
-    //</Router>
-  //);
-//}
-
-//export default App;
 
 
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<SignInSignUp />} />  {/* Signup/Signin page */}
+        <Route path="/landing" element={<LandingPage />} />  {/* Landing page */}
+        <Route path="/services" element={<Services />} />  {/* Services page */}
+        <Route path="/about-us" element={<AboutUs />} />  {/* About Us page */}
+        <Route path="/contact-us" element={<ContactUs />} />  {/* Contact Us page */}
+        <Route path="/dashboard" element={<Dashboard />} /> {/* Dashboard page */}
+      </Routes>
+    </Router>
+  );
+}
+
+export default App;
+
+/*
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -79,6 +79,6 @@ function App() {
 }
 
 export default App;
-
+*/
 
 

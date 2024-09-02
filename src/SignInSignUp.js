@@ -5,7 +5,7 @@ import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } f
 import { db } from './firebase'; // Import the Firestore instance
 import { collection, addDoc } from 'firebase/firestore'; // Firestore functions
 import './SignInSignUp.css';
-import logo from './assets/logo.png';
+import logo from './assets/logo3.jpg'; // Import logo image
 
 function SignInSignUp() {
   const [isSignUp, setIsSignUp] = useState(false);
@@ -50,73 +50,79 @@ function SignInSignUp() {
 
   return (
     <div className="container">
-      <header className="header">
-        <div className="logo">
-          <img src={logo} alt="Government Logo" style={{ width: '70px', height: '80px' }} />
-          <h1>Government of Delhi</h1>
-        </div>
-      </header>
       <main className="main-content">
-        <section className="form-section">
-          <h2>{isSignUp ? 'Sign Up' : 'Sign In'}</h2>
-          <form className="form" onSubmit={handleSubmit}>
-            {isSignUp && (
+        <section className="background-box">
+          <section className="background-shapes">
+            <div className="shape shape1"></div>
+            <div className="shape shape2"></div>
+            <div className="shape shape3"></div>
+            <div className="shape shape4"></div>
+            <div className="shape shape5"></div>
+            <div className="shape shape6"></div>
+            <div className="shape shape7"></div>
+            <div className="shape shape8"></div>
+          </section>
+          <div className="logo-container">
+            <img src={logo} alt="Logo" className="logo" />
+          </div>
+          <section className="form-section">
+            <h2>{isSignUp ? 'Sign Up' : 'Sign In'}</h2>
+            <form className="form" onSubmit={handleSubmit}>
+              {isSignUp && (
+                <label>
+                  Name:
+                  <input
+                    type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    required={isSignUp}
+                  />
+                </label>
+              )}
               <label>
-                Name:
+                Email:
                 <input
-                  type="text"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  required={isSignUp}
-                />
-              </label>
-            )}
-            <label>
-              Email:
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
-            </label>
-            <label>
-              Password:
-              <input
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-              />
-            </label>
-            {isSignUp && (
-              <label>
-                Confirm Password:
-                <input
-                  type="password"
-                  value={confirmPassword}
-                  onChange={(e) => setConfirmPassword(e.target.value)}
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   required
                 />
               </label>
-            )}
-            <button type="submit">{isSignUp ? 'Sign Up' : 'Sign In'}</button>
-            {error && <p className="error-message">{error}</p>}
-          </form>
-          <p>
-            {isSignUp ? 'Already have an account ?' : 'Don’t have an account ?'}
-            <button
-              className="toggle-button"
-              onClick={() => setIsSignUp(!isSignUp)}
-            >
-              {isSignUp ? 'Sign In' : 'Sign Up'}
-            </button>
-          </p>
+              <label>
+                Password:
+                <input
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                />
+              </label>
+              {isSignUp && (
+                <label>
+                  Confirm Password:
+                  <input
+                    type="password"
+                    value={confirmPassword}
+                    onChange={(e) => setConfirmPassword(e.target.value)}
+                    required
+                  />
+                </label>
+              )}
+              <button type="submit">{isSignUp ? 'Sign Up' : 'Sign In'}</button>
+              {error && <p className="error-message">{error}</p>}
+            </form>
+            <p>
+              {isSignUp ? 'Already have an account?' : 'Don’t have an account?'}
+              <button
+                className="toggle-button"
+                onClick={() => setIsSignUp(!isSignUp)}
+              >
+                {isSignUp ? 'Sign In' : 'Sign Up'}
+              </button>
+            </p>
+          </section>
         </section>
       </main>
-      <footer className="footer">
-        <p>© 2024 Government of Delhi. All Rights Reserved.</p>
-      </footer>
     </div>
   );
 }
