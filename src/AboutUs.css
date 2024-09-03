@@ -1,109 +1,144 @@
-/* src/AboutUs.css */
-
 /* General Styles */
 .App {
-    text-align: center;
-  }
-  
-  .App-header {
-    background-color: #003366;
-    padding: 10px;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .App-nav ul {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .App-nav li {
-    margin: 0 10px;
-    display: flex;
-    align-items: center;
-  }
-  
-  .App-nav a,
-  .sign-out-link {
-    text-decoration: none;
-    color: #ffffff;
-    padding: 10px 15px;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-    font-size: 16px;
-    font-weight: bold;
-    line-height: 1.5;
-  }
-  
-  .App-nav a:hover,
-  .sign-out-link:hover {
-    background-color: #555;
-  }
-  
-  .sign-out-link {
-    border: none;
-    background: none;
-    cursor: pointer;
-    padding: 10px 15px;
-    font-size: 16px;
-    font-weight: bold;
-  }
-  
-  .header-logo h1 {
-    margin: 0;
-  }
-  
-  .App-main {
-    padding: 20px;
-  }
-  
-  .about-intro {
-    background-color: #b9e4f8d4;
-    padding: 40px;
-    margin: 20px 0;
-    border-radius: 8px;
-  }
-  
-  .about-intro h2 {
-    color: #003366;
-  }
-  
-  .about-intro p {
-    color: #333;
-    margin: 20px 0;
-  }
-  
-  .about-details {
-    text-align: left;
-    margin: 20px 0;
-  }
-  
-  .about-section {
-    margin-bottom: 20px;
-  }
-  
-  .about-details h3 {
-    color: #003366;
-  }
-  
-  .App-footer {
-    background-color: #003366;
-    color: white;
-    padding: 20px;
-    margin-top: 20px;
-  }
-  
-  .App-footer a {
-    color: white;
-    text-decoration: none;
-    margin: 0 10px;
-  }
-  
-  .App-footer a:hover {
-    text-decoration: underline;
-  }
-  
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+.App-header {
+  background-color: #8dcaff;
+  padding: 10px;
+  color: #0e0101;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.App-nav ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.App-nav li {
+  margin: 0 15px;
+  display: flex;
+  align-items: center;
+}
+
+.App-nav a,
+.sign-out-link {
+  text-decoration: none;
+  color: #000;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.App-nav a:hover,
+.sign-out-link:hover {
+  background-color: #555;
+  color: #fff;
+}
+
+.sign-out-link {
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+.header-logo img {
+  max-width: 70px;
+  height: auto;
+}
+
+.header-logo h1 {
+  margin: 0;
+  font-size: 24px;
+  color: #003366;
+}
+
+/* Main Content Section */
+.App-main {
+  padding: 40px 20px;
+  background: linear-gradient(to bottom, #f0f8ff, #b9e4f8);
+}
+
+/* About Us Section */
+.about-container {
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-intro {
+  background-color: #b9e4f8d4;
+  padding: 40px;
+  margin: 20px 0;
+  border-radius: 8px;
+}
+
+.about-intro h2 {
+  color: #003366;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.about-intro p {
+  color: #333;
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.about-details {
+  text-align: left;
+  margin: 20px 0;
+}
+
+.about-section {
+  margin-bottom: 20px;
+}
+
+.about-details h3 {
+  color: #003366;
+  font-size: 24px;
+  border-bottom: 2px solid #003366;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.about-details p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.App-footer {
+  background-color: #8dcaff;
+  color: #1c0707;
+  padding: 20px;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.App-footer a {
+  color: #0e0101;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.App-footer a:hover {
+  text-decoration: underline;
+}
+

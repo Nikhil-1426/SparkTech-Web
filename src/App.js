@@ -8,6 +8,8 @@ import ContactUs from './ContactUs'; // Import the ContactUs component
 import Dashboard from './Dashboard'; //Import the Dashboard component
 import './App.css';
 import './firebase';
+import Graph1 from './Graph1';
+import Graph2 from './Graph2';
 
 
 function App() {
@@ -20,6 +22,8 @@ function App() {
         <Route path="/about-us" element={<AboutUs />} />  {/* About Us page */}
         <Route path="/contact-us" element={<ContactUs />} />  {/* Contact Us page */}
         <Route path="/dashboard" element={<Dashboard />} /> {/* Dashboard page */}
+        <Route path="/graph1" element={<Graph1 />} /> {/* Graph 1 page */}
+        <Route path="/graph2" element={<Graph2 />} /> {/* Graph 2 page */}
       </Routes>
     </Router>
   );
