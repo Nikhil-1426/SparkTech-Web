@@ -73,15 +73,16 @@
 
 // src/LandingPage.js
 
-import React from 'react';
+
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getAuth, signOut } from 'firebase/auth';
 import './App.css';
 import './LandingPage.css';
-import logo from './assets/logo.png';
-import GraphDisplay from './GraphDisplay'; // Import the GraphDisplay component
+// import logo from './assets/logo.png';
 
 function LandingPage() {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const navigate = useNavigate();
   const auth = getAuth();
 
@@ -94,11 +95,15 @@ function LandingPage() {
     }
   };
 
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
   return (
     <div className="App">
       <header className="App-header">
         <div className="header-logo">
-          <img src={logo} alt="Government Logo" style={{ width: '70px', height: '60px' }} />
+          {/* <img src={logo} alt="Government Logo" style={{ width: '70px', height: '60px' }} /> */}
           <h1>Government of Delhi</h1>
         </div>
         <nav className="App-nav">
@@ -115,7 +120,22 @@ function LandingPage() {
             </li>
           </ul>
         </nav>
+        {/* Button to open the sidebar */}
+        <button className="sidebar-toggle" onClick={toggleSidebar}>
+          ☰
+        </button>
       </header>
+
+      {/* Sidebar */}
+      {isSidebarOpen && (
+        <aside className="sidebar">
+          <button className="close-sidebar" onClick={toggleSidebar}>×</button>
+          <ul>
+            <li><a href="/graph1">Graph 1</a></li>
+            <li><a href="/graph2">Graph 2</a></li>
+          </ul>
+        </aside>
+      )}
 
       <main className="App-main">
         <section className="hero">
@@ -131,11 +151,6 @@ function LandingPage() {
             <li>Update 2: New policies introduced for sustainable urban development.</li>
             <li>Update 3: Upcoming events and public consultations.</li>
           </ul>
-        </section>
-
-        {/* Integrate the GraphDisplay component here */}
-        <section className="graph-section">
-          <GraphDisplay />
         </section>
       </main>
 

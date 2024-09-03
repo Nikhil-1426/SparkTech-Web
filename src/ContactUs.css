@@ -1,137 +1,146 @@
-/* src/ContactUs.css */
-
 /* General Styles */
 .App {
-    text-align: center;
-  }
-  
-  .App-header {
-    background-color: #003366;
-    padding: 10px;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .App-nav ul {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .App-nav li {
-    margin: 0 10px;
-    display: flex;
-    align-items: center;
-  }
-  
-  .App-nav a,
-  .sign-out-link {
-    text-decoration: none;
-    color: #ffffff;
-    padding: 10px 15px;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-    font-size: 16px;
-    font-weight: bold;
-    line-height: 1.5;
-  }
-  
-  .App-nav a:hover,
-  .sign-out-link:hover {
-    background-color: #555;
-  }
-  
-  .sign-out-link {
-    border: none;
-    background: none;
-    cursor: pointer;
-    padding: 10px 15px;
-    font-size: 16px;
-    font-weight: bold;
-  }
-  
-  .header-logo h1 {
-    margin: 0;
-  }
-  
-  .App-main {
-    padding: 20px;
-  }
-  
-  .contact-intro {
-    background-color: #b9e4f8d4;
-    padding: 40px;
-    margin: 20px 0;
-    border-radius: 8px;
-  }
-  
-  .contact-intro h2 {
-    color: #003366;
-  }
-  
-  .contact-intro p {
-    color: #333;
-    margin: 20px 0;
-  }
-  
-  .contact-form {
-    text-align: left;
-    margin: 20px auto;
-    max-width: 600px;
-  }
-  
-  .contact-form h3 {
-    color: #003366;
-  }
-  
-  .contact-form form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .contact-form label {
-    margin: 10px 0 5px;
-    font-weight: bold;
-  }
-  
-  .contact-form input,
-  .contact-form textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-bottom: 15px;
-  }
-  
-  .contact-form .submit-button {
-    padding: 10px 20px;
-    background-color: #005b99;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .contact-form .submit-button:hover {
-    background-color: #003366;
-  }
-  
-  .App-footer {
-    background-color: #003366;
-    color: white;
-    padding: 20px;
-    margin-top: 20px;
-  }
-  
-  .App-footer a {
-    color: white;
-    text-decoration: none;
-    margin: 0 10px;
-  }
-  
-  .App-footer a:hover {
-    text-decoration: underline;
-  }
-  
+  text-align: center;
+}
+
+.App-header {
+  background-color: #8dcaff;
+  padding: 10px;
+  color: #0e0101;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.App-nav ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.App-nav li {
+  margin: 0 10px;
+  display: flex;
+  align-items: center;
+}
+
+.App-nav a,
+.sign-out-link {
+  text-decoration: none;
+  color: #ffffff;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+.App-nav a:hover,
+.sign-out-link:hover {
+  background-color: #555;
+}
+
+.sign-out-link {
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 10px 15px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.header-logo h1 {
+  margin: 0;
+}
+
+.App-main {
+  padding: 20px;
+}
+
+/* New Container for Contact Section */
+.contact-container {
+  background-color: #f0f8ff; /* Light blue color for the container */
+  padding: 30px;
+  margin: 30px auto;
+  width: 90%;
+  max-width: 700px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-intro {
+  background-color: #b9e4f8d4;
+  padding: 40px;
+  margin: 20px 0;
+  width: 88.5%;
+  border-radius: 8px;
+}
+
+.contact-intro h2 {
+  color: #003366;
+}
+
+.contact-intro p {
+  color: #333;
+  margin: 20px 0;
+}
+
+.contact-form {
+  text-align: left;
+  margin: 20px 0;
+  width: 100%;
+}
+
+.contact-form h3 {
+  color: #003366;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form label {
+  margin: 10px 0 5px;
+  font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.contact-form .submit-button {
+  padding: 10px 20px;
+  background-color: #005b99;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.contact-form .submit-button:hover {
+  background-color: #003366;
+}
+
+.App-footer {
+  background-color: #8dcaff;
+  color: #0e0101;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.App-footer a {
+  color: #0e0101;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.App-footer a:hover {
+  text-decoration: underline;
+}

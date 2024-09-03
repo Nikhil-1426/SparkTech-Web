@@ -1,5 +1,3 @@
-// src/ContactUs.js
-
 import React from 'react';
 import './ContactUs.css';
 import logo from './assets/logo.png';
@@ -20,35 +18,36 @@ function ContactUs() {
             <li><a href="/services">Services</a></li>
             <li><a href="/contact-us">Contact</a></li>
             <li>
-              <button className="sign-out-link">
-                Sign Out
-              </button>
+              <button className="sign-out-link">Sign Out</button>
             </li>
           </ul>
         </nav>
       </header>
 
       <main className="App-main">
-        <section className="contact-intro">
-          <h2>Contact Us</h2>
-          <p>Get in touch with us for any queries, feedback, or support.</p>
-        </section>
-
-        <section className="contact-form">
-          <h3>Send Us a Message</h3>
-          <form>
-            <label htmlFor="name">Name:</label>
-            <input type="text" id="name" name="name" required />
-            
-            <label htmlFor="email">Email:</label>
-            <input type="email" id="email" name="email" required />
-            
-            <label htmlFor="message">Message:</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-            
-            <button type="submit" className="submit-button">Send Message</button>
-          </form>
-        </section>
+        {/* Contact Container with Intro and Form */}
+        <div className="contact-container">
+          <div className="contact-intro">
+            <h2>Contact Us</h2>
+            <p>Welcome to our contact page! Feel free to reach out to us using the form below.</p>
+          </div>
+          
+          <div className="contact-form">
+            <h3>Send Us a Message</h3>
+            <form>
+              <label htmlFor="name">Name:</label>
+              <input type="text" id="name" name="name" required />
+              
+              <label htmlFor="email">Email:</label>
+              <input type="email" id="email" name="email" required />
+              
+              <label htmlFor="message">Message:</label>
+              <textarea id="message" name="message" rows="4" required></textarea>
+              
+              <button type="submit" className="submit-button">Submit</button>
+            </form>
+          </div>
+        </div>
       </main>
 
       <footer className="App-footer">

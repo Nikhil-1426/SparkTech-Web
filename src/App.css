@@ -10,9 +10,9 @@ body {
 }
 
 .App-header {
-  background-color: #003366;
+  background-color: #8dcaff;
   padding: 10px;
-  color: white;
+  color: #0e0101;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -114,14 +114,14 @@ body {
 
 /* Footer Styles */
 .App-footer {
-  background-color: #003366;
-  color: white;
+  background-color: #8dcaff;
+  color: #0e0101;
   padding: 20px;
   margin-top: 20px;
 }
 
 .App-footer a {
-  color: white;
+  color: #0e0101;
   text-decoration: none;
   margin: 0 10px;
 }

@@ -6,9 +6,9 @@
   }
   
   .App-header {
-    background-color: #003366;
+    background-color: #8dcaff;
     padding: 10px;
-    color: white;
+    color: #050101;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -91,14 +91,14 @@
   }
   
   .App-footer {
-    background-color: #003366;
-    color: white;
+    background-color: #8dcaff;
+    color: #0e0101;
     padding: 20px;
     margin-top: 20px;
   }
   
   .App-footer a {
-    color: white;
+    color: #0e0101;
     text-decoration: none;
     margin: 0 10px;
   }
