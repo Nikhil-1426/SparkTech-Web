@@ -1,15 +1,13 @@
-// src/Services.js
-
 import React from 'react';
 import './Services.css';
-import logo from './assets/logo.png';
+// import logo from './assets/logo.png'; // Commented out the logo import
 
 function Services() {
   return (
     <div className="App">
       <header className="App-header">
         <div className="header-logo">
-            <img src={logo} alt="Government Logo" style={{ width: '70px', height: '60px' }} />
+          {/* <img src={logo} alt="Government Logo" style={{ width: '70px', height: '60px' }} /> */}
           <h1>Government of Delhi</h1>
         </div>
         <nav className="App-nav">

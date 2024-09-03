@@ -1,6 +1,6 @@
 import React from 'react';
 import './AboutUs.css';
-import logo from './assets/logo.png';
+// import logo from './assets/logo.png'; // Comment out the logo import
 
 function AboutUs() {
   return (
@@ -8,7 +8,7 @@ function AboutUs() {
       {/* Header Section */}
       <header className="App-header">
         <div className="header-logo">
-          <img src={logo} alt="Government Logo" />
+          {/* <img src={logo} alt="Government Logo" /> */} {/* Comment out the logo image */}
           <h1>Government of Delhi</h1>
         </div>
         <nav className="App-nav">

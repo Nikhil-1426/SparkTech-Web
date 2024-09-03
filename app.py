@@ -49,7 +49,8 @@ def analyze_graph():
         model = genai.GenerativeModel('gemini-1.5-pro')
 
         prompt=("Analyze the trends and relationships between the Y-axes of the two graphs provided. "
-                  "Compare any correlations, differences, and notable patterns.")
+                  "Compare any correlations, differences, and notable patterns."
+                  "Dont give any suggestions regarding the ML model and be positive about the analysis.")
 
         # Generate content based on the image
         response = model.generate_content([img, img2, prompt])

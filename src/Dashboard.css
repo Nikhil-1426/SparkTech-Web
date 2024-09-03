@@ -1,4 +1,11 @@
-/* Top Bar Styles */
+/* General Styles */
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* Header Styles */
 .App-header {
   background-color: #8dcaff;
   padding: 10px;
@@ -6,19 +13,17 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: none; /* Remove border */
-  width: 100%; /* Occupy the entire page */
-  height: 60px; /* Set height to match the landing page top bar */
+  width: 100%;
+  height: 60px;
 }
 
 .header-logo {
   display: flex;
   align-items: center;
-  margin-right: auto; /* Align logo to the left */
 }
 
-.header-logo img {
-  margin-right: 10px;
+.header-logo h1 {
+  margin: 0;
 }
 
 .App-nav ul {
@@ -29,39 +34,43 @@
 }
 
 .App-nav li {
-  margin: 0 10px; /* Adjust margin to reduce spacing */
-  display: flex; /* Align items vertically */
-  align-items: center; /* Center vertically */
+  margin: 0 10px;
+  display: flex;
+  align-items: center;
 }
 
 .App-nav a,
 .sign-out-link {
   text-decoration: none;
-  color: #0e0101; /* Navigation links color */
-  padding: 10px 15px; /* Padding for consistency */
+  color: #0e0101;
+  padding: 10px 15px;
   border-radius: 5px;
   transition: background-color 0.3s;
-  font-size: 16px; /* Set font size for consistency */
-  font-weight: bold; /* Set font weight for consistency */
-  line-height: 1.5; /* Ensure vertical alignment */
+  font-size: 16px;
+  font-weight: bold;
 }
 
 .App-nav a:hover,
 .sign-out-link:hover {
-  background-color: #555; /* Darker shade on hover */
+  background-color: #555;
 }
 
-/* Center the Dashboard sign */
+/* Main Content Styles */
+.App-main {
+  padding: 20px;
+  flex: 1; /* Allow main content to expand */
+}
+
 .dashboard-title {
-  text-align: center; /* Center the text horizontally */
-  margin: 20px 0; /* Add some vertical margin */
+  text-align: center;
+  margin: 20px 0;
 }
 
 /* Table Styles */
 .dashboard-table {
-  width: 90%; /* Increased width to make the table larger */
+  width: 90%;
   border-collapse: collapse;
-  margin: 20px auto; /* Center the table */
+  margin: 20px auto;
   font-size: 16px;
   text-align: center;
 }
@@ -69,7 +78,7 @@
 .dashboard-table th,
 .dashboard-table td {
   padding: 12px 15px;
-  border: 1px solid #ddd; /* Add border for all cells */
+  border: 1px solid #ddd;
 }
 
 .dashboard-table th {
@@ -82,11 +91,18 @@
   background-color: #f2f2f2;
 }
 
-/* Table Header and Row Hover Effects */
 .dashboard-table tr:hover {
   background-color: #e0e0e0;
 }
 
 .dashboard-table td {
   color: #333;
+}
+
+/* Footer Styles */
+.App-footer {
+  background-color: #8dcaff;
+  color: #0e0101;
+  padding: 20px;
+  text-align: center;
 }
