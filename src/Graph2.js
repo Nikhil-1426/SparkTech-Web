@@ -1,44 +1,48 @@
-
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import { Link } from 'react-router-dom';
 import './App.css';
 import './LandingPage.css';
 
-function Graph2() {
+const Graph2 = () => {
+  const [parameter, setParameter] = useState('temperature');
+  const [timeRange, setTimeRange] = useState('Day');
+  const [district, setDistrict] = useState('South Delhi');
+  const [imageSrc, setImageSrc] = useState('');
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const [mainGraphImage, setMainGraphImage] = useState('');
-  const [smallGraphImages, setSmallGraphImages] = useState([]);
+
+  // List of districts
+  const districts = [
+    'All Districts', 'South Delhi', 'North Delhi', 'East Delhi', 'West Delhi', 
+    'Central Delhi', 'North East Delhi', 'North West Delhi', 'South East Delhi', 
+    'South West Delhi', 'New Delhi', 'Shahdara'
+  ];
+
+  // Function to update the image source based on selected options
+  useEffect(() => {
+    const updateImageSrc = () => {
+      const formattedDistrict = district.replace(/\s+/g, '').toLowerCase();
+      const formattedParameter = parameter.toLowerCase();
+      const formattedTimeRange = timeRange.toLowerCase();
+      
+      const imageName = `${formattedTimeRange}.png`; // Ensure this uses the timeRange state
+      const imageUrl = `/images/${formattedDistrict}/${formattedParameter}/${imageName}`;
+      
+      console.log(`Image Name: ${imageName}`);
+      console.log(`Image URL: ${imageUrl}`);
+
+      setImageSrc(imageUrl);
+    };
+
+    updateImageSrc();
+  }, [parameter, timeRange, district]);
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
-  const fetchGraphs = async () => {
-    try {
-      const [mainResponse, smallResponse] = await Promise.all([
-        axios.get('http://localhost:5000/main-graph', { responseType: 'blob' }),
-        axios.get('http://localhost:5000/small-graphs', { responseType: 'blob' })
-      ]);
-      const mainImageUrl = URL.createObjectURL(mainResponse.data);
-      setMainGraphImage(mainImageUrl);
-
-      const smallImagesUrls = smallResponse.data.map((blob, index) => 
-        URL.createObjectURL(blob)
-      );
-      setSmallGraphImages(smallImagesUrls);
-    } catch (error) {
-      console.error('Error fetching graphs:', error);
-    }
+  const handleTimeRangeClick = (range) => {
+    setTimeRange(range); // Update the timeRange state on button click
   };
-
-  const handleSmallGraphClick = (imageUrl) => {
-    setMainGraphImage(imageUrl);
-  };
-
-  useEffect(() => {
-    fetchGraphs();
-  }, []);
 
   return (
     <div className="App">
@@ -74,23 +78,35 @@ function Graph2() {
 
       <main className="App-main">
         <h2>Graph 2 Page</h2>
-        <div className="graphs-container">
-          <div className="main-graph-container">
-            {mainGraphImage && (
-              <img src={mainGraphImage} alt="Main Graph" style={{ maxWidth: '100%' }} />
-            )}
-          </div>
-          <div className="small-graphs-container">
-            {smallGraphImages.map((imageUrl, index) => (
-              <img
-                key={index}
-                src={imageUrl}
-                alt={`Small Graph ${index + 1}`}
-                onClick={() => handleSmallGraphClick(imageUrl)}
-                style={{ cursor: 'pointer', width: '100px', height: '100px', margin: '5px' }}
-              />
+        <div className="controls">
+          <select onChange={(e) => setParameter(e.target.value)} value={parameter}>
+            <option value="temperature">Temperature</option>
+            <option value="humidity">Humidity</option>
+            <option value="windspeed">Wind Speed</option>
+            <option value="precipitation">Precipitation</option>
+            {/* Add more options as needed */}
+          </select>
+
+          <div className="time-range-buttons">
+            {['Day', 'Week', 'Month', 'Year'].map((range) => (
+              <button
+                key={range}
+                className={timeRange === range ? 'active' : ''}
+                onClick={() => handleTimeRangeClick(range)}
+              >
+                {range}
+              </button>
             ))}
           </div>
+
+          <select onChange={(e) => setDistrict(e.target.value)} value={district}>
+            {districts.map((dist) => (
+              <option key={dist} value={dist}>{dist}</option>
+            ))}
+          </select>
+        </div>
+        <div className="graph-container">
+          {imageSrc && <img src={imageSrc} alt="Graph" style={{ width: '600px', height: '400px', objectFit: 'contain' }} />}
         </div>
       </main>
 
