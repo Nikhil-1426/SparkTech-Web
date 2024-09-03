@@ -1,10 +1,8 @@
-// src/Dashboard.js
 import React, { useEffect, useState } from 'react';
 import { collection, query, where, getDocs } from 'firebase/firestore';
 import { onAuthStateChanged } from 'firebase/auth';
 import { db, auth } from './firebase'; // Import the Firestore instance and Auth
-import TopBar from './TopBar.js'; // Ensure 'TopBar' matches the file name exactly
-import './Dashboard.css';
+import './Dashboard.css'; // Import the updated CSS file for Dashboard
 
 function Dashboard() {
   const [data, setData] = useState([]); // State to hold fetched data
@@ -35,45 +33,68 @@ function Dashboard() {
 
   return (
     <div className="dashboard-container">
-      <TopBar /> {/* Include the TopBar component */}
-      <h1 className="dashboard-title">Dashboard</h1> {/* Center the title */}
-      {user ? (
-        <table className="dashboard-table">
-          <thead>
-            <tr>
-              <th>Field</th>
-              {data.map((item) => (
-                <th key={item.id}>User {item.id}</th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>ID</td>
-              {data.map((item) => (
-                <td key={`id-${item.id}`}>{item.id}</td>
-              ))}
-            </tr>
-            <tr>
-              <td>Name</td>
-              {data.map((item) => (
-                <td key={`name-${item.id}`}>{item.name}</td>
-              ))}
-            </tr>
-            <tr>
-              <td>Email ID</td>
-              {data.map((item) => (
-                <td key={`email-${item.id}`}>{item.email}</td>
-              ))}
-            </tr>
-          </tbody>
-        </table>
-      ) : (
-        <p>Please log in to view your data.</p> // Message for non-logged-in users
-      )}
+      <header className="App-header">
+        <div className="header-logo">
+          <h1>Government of Delhi</h1>
+        </div>
+        <nav className="App-nav">
+          <ul>
+            <li><a href="/landing">Home</a></li>
+            <li><a href="/dashboard">Dashboard</a></li>
+            <li><a href="/about-us">About Us</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/contact-us">Contact</a></li>
+            <li>
+              <button className="sign-out-link">Sign Out</button>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <main className="App-main">
+        <h1 className="dashboard-title">Dashboard</h1>
+        {user ? (
+          <table className="dashboard-table">
+            <thead>
+              <tr>
+                <th>Field</th>
+                {data.map((item) => (
+                  <th key={item.id}>User {item.id}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>ID</td>
+                {data.map((item) => (
+                  <td key={`id-${item.id}`}>{item.id}</td>
+                ))}
+              </tr>
+              <tr>
+                <td>Name</td>
+                {data.map((item) => (
+                  <td key={`name-${item.id}`}>{item.name}</td>
+                ))}
+              </tr>
+              <tr>
+                <td>Email ID</td>
+                {data.map((item) => (
+                  <td key={`email-${item.id}`}>{item.email}</td>
+                ))}
+              </tr>
+            </tbody>
+          </table>
+        ) : (
+          <p>Please log in to view your data.</p>
+        )}
+      </main>
+
+      <footer className="App-footer">
+        <p>© 2024 Government of Delhi. All Rights Reserved.</p>
+        <p><a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Service</a></p>
+      </footer>
     </div>
   );
 }
 
 export default Dashboard;
-
