@@ -4,10 +4,12 @@ import './App.css';
 import './LandingPage.css';
 
 const Graph2 = () => {
-  const [parameter, setParameter] = useState('temperature');
+  const [mainParameter, setMainParameter] = useState('temperature');
+  const [secondaryParameters, setSecondaryParameters] = useState(['humidity', 'windspeed', 'precipitation']);
   const [timeRange, setTimeRange] = useState('Day');
   const [district, setDistrict] = useState('South Delhi');
-  const [imageSrc, setImageSrc] = useState('');
+  const [mainImageSrc, setMainImageSrc] = useState('');
+  const [secondaryImages, setSecondaryImages] = useState([]);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   // List of districts
@@ -17,24 +19,28 @@ const Graph2 = () => {
     'South West Delhi', 'New Delhi', 'Shahdara'
   ];
 
-  // Function to update the image source based on selected options
+  // Function to update the main and secondary image sources
   useEffect(() => {
-    const updateImageSrc = () => {
+    const updateImageSrcs = () => {
       const formattedDistrict = district.replace(/\s+/g, '').toLowerCase();
-      const formattedParameter = parameter.toLowerCase();
       const formattedTimeRange = timeRange.toLowerCase();
-      
-      const imageName = `${formattedTimeRange}.png`; // Ensure this uses the timeRange state
-      const imageUrl = `/images/${formattedDistrict}/${formattedParameter}/${imageName}`;
-      
-      console.log(`Image Name: ${imageName}`);
-      console.log(`Image URL: ${imageUrl}`);
 
-      setImageSrc(imageUrl);
+      // Update main image
+      const formattedMainParameter = mainParameter.toLowerCase();
+      const mainImageName = `${formattedTimeRange}.png`;
+      const mainImageUrl = `/images/${formattedDistrict}/${formattedMainParameter}/${mainImageName}`;
+      setMainImageSrc(mainImageUrl);
+
+      // Update secondary images
+      const updatedSecondaryImages = secondaryParameters.map(param => {
+        const formattedParam = param.toLowerCase();
+        return `/images/${formattedDistrict}/${formattedParam}/${mainImageName}`;
+      });
+      setSecondaryImages(updatedSecondaryImages);
     };
 
-    updateImageSrc();
-  }, [parameter, timeRange, district]);
+    updateImageSrcs();
+  }, [mainParameter, secondaryParameters, timeRange, district]);
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -42,6 +48,13 @@ const Graph2 = () => {
 
   const handleTimeRangeClick = (range) => {
     setTimeRange(range); // Update the timeRange state on button click
+  };
+
+  const handleGraphClick = (clickedParameter) => {
+    setSecondaryParameters(
+      secondaryParameters.map(param => (param === clickedParameter ? mainParameter : param))
+    );
+    setMainParameter(clickedParameter);
   };
 
   return (
@@ -59,13 +72,11 @@ const Graph2 = () => {
             <li><a href="/contact-us">Contact</a></li>
           </ul>
         </nav>
-        {/* Button to open the sidebar */}
         <button className="sidebar-toggle" onClick={toggleSidebar}>
           ☰
         </button>
       </header>
 
-      {/* Sidebar */}
       {isSidebarOpen && (
         <aside className="sidebar">
           <button className="close-sidebar" onClick={toggleSidebar}>×</button>
@@ -79,12 +90,10 @@ const Graph2 = () => {
       <main className="App-main">
         <h2>Graph 2 Page</h2>
         <div className="controls">
-          <select onChange={(e) => setParameter(e.target.value)} value={parameter}>
-            <option value="temperature">Temperature</option>
-            <option value="humidity">Humidity</option>
-            <option value="windspeed">Wind Speed</option>
-            <option value="precipitation">Precipitation</option>
-            {/* Add more options as needed */}
+          <select onChange={(e) => setDistrict(e.target.value)} value={district}>
+            {districts.map((dist) => (
+              <option key={dist} value={dist}>{dist}</option>
+            ))}
           </select>
 
           <div className="time-range-buttons">
@@ -98,15 +107,30 @@ const Graph2 = () => {
               </button>
             ))}
           </div>
-
-          <select onChange={(e) => setDistrict(e.target.value)} value={district}>
-            {districts.map((dist) => (
-              <option key={dist} value={dist}>{dist}</option>
-            ))}
-          </select>
         </div>
-        <div className="graph-container">
-          {imageSrc && <img src={imageSrc} alt="Graph" style={{ width: '600px', height: '400px', objectFit: 'contain' }} />}
+
+        <div className="graphs-wrapper">
+          <div className="main-graph-container">
+            {mainImageSrc && (
+              <img
+                src={mainImageSrc}
+                alt="Main Graph"
+                style={{ width: '600px', height: '400px', objectFit: 'contain' }}
+              />
+            )}
+          </div>
+
+          <div className="secondary-graphs-container">
+            {secondaryImages.map((src, index) => (
+              <img
+                key={src}
+                src={src}
+                alt={`Graph ${secondaryParameters[index]}`}
+                onClick={() => handleGraphClick(secondaryParameters[index])}
+                style={{ width: '150px', height: '100px', objectFit: 'contain', cursor: 'pointer' }}
+              />
+            ))}
+          </div>
         </div>
       </main>
 
@@ -116,6 +140,6 @@ const Graph2 = () => {
       </footer>
     </div>
   );
-}
+};
 
 export default Graph2;

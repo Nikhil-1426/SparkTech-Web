@@ -219,15 +219,21 @@ body {
 
 .graphs-container {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  justify-content: center; /* Center the content horizontally */
+  align-items: flex-start; /* Align items at the start of the container */
+  gap: -10px !important; /* Adjust this value to control space between main and secondary graphs */
+  margin: 0 auto; /* Center the container itself */
 }
 
+/* Container for the main graph */
 .main-graph-container {
-  flex: 3;
-  margin-right: 20px;
+  flex: 3; /* Adjust flex ratio as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+/* Container for the secondary graphs */
 .small-graphs-container {
   display: flex;
   flex-direction: column;
@@ -236,7 +242,7 @@ body {
 }
 
 .small-graphs-container img {
-  margin-bottom: 20px;
+  margin-bottom: 10px; /* Reduce this value to decrease space between images */
 }
 
 .App-header {

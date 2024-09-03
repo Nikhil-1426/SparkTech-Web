@@ -132,8 +132,6 @@ body {
   text-decoration: underline;
 }
 
-
-
 /* Styling for dropdown buttons */
 .controls select {
   padding: 10px;
@@ -220,9 +218,31 @@ body {
   justify-content: center;
   align-items: center;
   margin: 20px auto; /* Centers the container horizontally */
-  width: 600px; /* Ensure the width of the image is specified */
+  width: 300px; /* Ensure the width of the image is specified */
   height: 400px; /* Ensure the height of the image is specified */
   background-color: #f8f9fa; /* Optional: Background color for visibility */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Adding some shadow */
   border-radius: 8px; /* Optional: Adding rounded corners */
+  max-width: 200px;
+}
+
+.graphs-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+  margin-top: 20px;
+}
+
+.main-graph-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.secondary-graphs-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
