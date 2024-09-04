@@ -69,21 +69,21 @@
 /* Main Content Section */
 .App-main {
   padding: 40px 20px;
-  background: linear-gradient(to bottom, #f0f8ff, #b9e4f8);
+  background-color: #d6e2ea;
 }
 
 /* About Us Section */
 .about-container {
   max-width: 900px;
   margin: 0 auto;
-  background-color: #ffffff;
+  background: linear-gradient(135deg, #acd7f4, #71b8f6);
   padding: 40px;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .about-intro {
-  background-color: #b9e4f8d4;
+  background-color: #d5ecf7d4;
   padding: 40px;
   margin: 20px 0;
   border-radius: 8px;

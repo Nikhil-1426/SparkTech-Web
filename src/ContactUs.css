@@ -1,8 +1,15 @@
 /* General Styles */
-.App {
+.contact-page {
+  font-family: Arial, sans-serif;
+  color: #fff;
+  background-color: #cadbe7; /* Light blue background matching Services page */
   text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
+/* Header Styles (matching Services page) */
 .App-header {
   background-color: #8dcaff;
   padding: 10px;
@@ -10,6 +17,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.header-logo h1 {
+  margin: 0;
 }
 
 .App-nav ul {
@@ -31,7 +42,7 @@
   color: #ffffff;
   padding: 10px 15px;
   border-radius: 5px;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, box-shadow 0.3s;
   font-size: 16px;
   font-weight: bold;
   line-height: 1.5;
@@ -40,6 +51,7 @@
 .App-nav a:hover,
 .sign-out-link:hover {
   background-color: #555;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .sign-out-link {
@@ -51,35 +63,40 @@
   font-weight: bold;
 }
 
-.header-logo h1 {
-  margin: 0;
-}
-
-.App-main {
+/* Main Content Styles */
+.contact-main {
   padding: 20px;
+  flex: 1;
 }
 
 /* New Container for Contact Section */
 .contact-container {
-  background-color: #f0f8ff; /* Light blue color for the container */
+  background-color: #cbe7ff; /* Light blue color for the container */
   padding: 30px;
   margin: 30px auto;
   width: 90%;
   max-width: 700px;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1), 0 6px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.contact-container:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2), 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
 .contact-intro {
-  background-color: #b9e4f8d4;
+  background: linear-gradient(135deg, #acd7f4, #71b8f6); /* Darker blue for contrast */
   padding: 40px;
   margin: 20px 0;
   width: 88.5%;
   border-radius: 8px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
 }
 
 .contact-intro h2 {
-  color: #003366;
+  color: #052c52;
 }
 
 .contact-intro p {
@@ -91,10 +108,11 @@
   text-align: left;
   margin: 20px 0;
   width: 100%;
+  color: #09283c;
 }
 
 .contact-form h3 {
-  color: #003366;
+  color: #05306d;
 }
 
 .contact-form form {
@@ -110,29 +128,31 @@
 .contact-form input,
 .contact-form textarea {
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #bbddf3;
   border-radius: 5px;
   margin-bottom: 15px;
 }
 
 .contact-form .submit-button {
   padding: 10px 20px;
-  background-color: #005b99;
+  background-color: #6fc0f6;
   color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .contact-form .submit-button:hover {
-  background-color: #003366;
+  background-color: #3872ac;
 }
 
+/* Footer Styles */
 .App-footer {
   background-color: #8dcaff;
   color: #0e0101;
   padding: 20px;
-  margin-top: 20px;
+  margin-top: auto;
 }
 
 .App-footer a {

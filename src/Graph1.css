@@ -9,11 +9,12 @@
   
   /* Top Bar */
   .top-bar {
-    background-color: #d3e8ff;
+    background-color: #8dcaff;
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height:100px;
   }
   
   .top-bar .header-logo h1 {
@@ -107,7 +108,7 @@
   }
   
   .timeframe-tabs button.active {
-    background-color: #6a78b4;
+    background-color: #90bef4;
     color: #ffffff;
   }
   
@@ -164,7 +165,7 @@
   
   /* Analyze Button */
   .analyze-button {
-    background-color: #6a78b4;
+    background-color: #73aff3;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -197,7 +198,7 @@
   
   /* Footer */
   .footer {
-    background-color: #d3e8ff;
+    background-color: #8dcaff;
     padding: 10px 20px;
     text-align: center;
   }

@@ -68,14 +68,7 @@ function LandingPage() {
           <button className="cta-button">Learn More</button>
         </section>
 
-        <section className="info-section">
-          <h3>Latest Updates</h3>
-          <ul>
-            <li>Update 1: Details about power load management initiatives.</li>
-            <li>Update 2: New policies introduced for sustainable urban development.</li>
-            <li>Update 3: Upcoming events and public consultations.</li>
-          </ul>
-        </section>
+        
       </main>
 
       <footer className="App-footer">

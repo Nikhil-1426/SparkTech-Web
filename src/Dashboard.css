@@ -3,6 +3,9 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
+  font-family: Arial, sans-serif;
+  color: #fff;
+  background-color: #cadbe7;
 }
 
 /* Header Styles */
@@ -64,13 +67,23 @@
 .dashboard-title {
   text-align: center;
   margin: 20px 0;
+  color: #070202;
+}
+
+/* Box Around Dashboard and Table */
+.dashboard-box {
+  background: linear-gradient(135deg, #acd7f4, #71b8f6);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 75%;
 }
 
 /* Table Styles */
 .dashboard-table {
-  width: 90%;
+  width: 100%;
   border-collapse: collapse;
-  margin: 20px auto;
   font-size: 16px;
   text-align: center;
 }
@@ -78,21 +91,26 @@
 .dashboard-table th,
 .dashboard-table td {
   padding: 12px 15px;
-  border: 1px solid #ddd;
+  border: 1px solid #01020b;
 }
 
 .dashboard-table th {
-  background-color: #67b2f4;
-  color: #0e0101;
+  background-color: #4a90e2; /* Solid color instead of gradient */
+  color: #fff;
   font-weight: bold;
+  text-transform: uppercase;
 }
 
 .dashboard-table tr:nth-child(even) {
-  background-color: #f2f2f2;
+  background-color: #edf6fe;
+}
+
+.dashboard-table tr:nth-child(odd) {
+  background-color: #edf6fe;
 }
 
 .dashboard-table tr:hover {
-  background-color: #e0e0e0;
+  background-color: #d8e5fb;
 }
 
 .dashboard-table td {
