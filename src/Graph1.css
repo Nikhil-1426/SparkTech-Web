@@ -1,204 +1,180 @@
-/* Graph1.css */
-
 /* General Styles */
 .graph1-container {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-  }
-  
-  /* Top Bar */
-  .top-bar {
-    background-color: #8dcaff;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height:100px;
-  }
-  
-  .top-bar .header-logo h1 {
-    margin: 0;
-  }
-  
-  .top-bar .nav-links {
-    display: flex;
-    gap: 15px;
-  }
-  
-  .top-bar .nav-links a {
-    text-decoration: none;
-    color: #333;
-  }
-  
-  .sidebar-toggle {
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-  }
-  
-  /* Sidebar */
-  .sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 250px;
-    background-color: #f4f4f4;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .close-sidebar {
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    align-self: flex-end;
-  }
-  
-  .sidebar ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .sidebar ul li {
-    margin: 10px 0;
-  }
-  
-  .sidebar ul li a {
-    text-decoration: none;
-    color: #333;
-  }
-  
-  /* Main Content */
-  .main-content {
-    margin-left: 250px; /* Adjust based on sidebar width */
-    padding: 20px;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  /* Graph Container */
-  .graph-container {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  /* Timeframe Tabs */
-  .timeframe-tabs {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
-    align-items: center;
-  }
-  
-  .timeframe-tabs button {
-    background-color: #e1ecf8;
-    border: none;
-    padding: 8px 20px;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  
-  .timeframe-tabs button.active {
-    background-color: #90bef4;
-    color: #ffffff;
-  }
-  
-  /* Dropdown Container */
-  .dropdown-container {
-    margin-bottom: 20px;
-  }
-  
-  .dropdown-select {
-    background-color: #ffffff;
-    border: 1px solid #6a78b4;
-    padding: 8px 20px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 16px;
-    outline: none;
-    appearance: none; /* Remove default dropdown styling */
-    width: 100%;
-    position: relative;
-  }
-  
-  .dropdown-select::after {
-    content: '▼';
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #6a78b4;
-  }
-  
-  /* Graph Controls */
-  .graph-controls {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background-color: #ffffff;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Graph Image Container */
-  .graph-image-container {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .graph-image-container img {
-    max-width: 100%;
-    height: auto;
-  }
-  
-  /* Analyze Button */
-  .analyze-button {
-    background-color: #73aff3;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    align-self: center;
-    margin-top: 20px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .analyze-button:hover {
-    background-color: #5a6a9e;
-  }
-  
-  /* Analysis Container */
-  .analysis-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #bfd7f7;
-  }
-  
-  .analysis-container h3 {
-    margin-top: 0;
-  }
-  
-  /* Footer */
-  .footer {
-    background-color: #8dcaff;
-    padding: 10px 20px;
-    text-align: center;
-  }
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* Header (Top Bar) */
+.top-bar {
+  background-color: #8dcaff; /* Consistent background color */
+  padding: 10px;
+  color: #0e0101; /* Consistent text color */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 55px; /* Consistent height */
+}
+
+.header-logo h1 {
+  margin: 0;
+}
+
+.nav-links {
+  display: flex;
+  gap: 15px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #0e0101; /* Consistent link color */
+  font-size: 20px; /* Consistent font size */
+  font-weight: bold; /* Consistent font weight */
+  line-height: 1.5; /* Consistent line height */
+  /* Removed hover background color and text color */
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 250px;
+  background-color: #f4f4f4;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.close-sidebar {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  align-self: flex-end;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin: 10px 0;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: #333;
+}
+
+/* Main Content */
+.main-content {
+  margin-left: 250px; /* Adjust based on sidebar width */
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.main-content h2 {
+  margin-right: 15%;
+}
+
+/* Graph Container */
+.graph-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-right:15%;
+}
+
+/* Timeframe Tabs */
+.timeframe-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.timeframe-tabs button {
+  background-color: #e1ecf8;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.timeframe-tabs button.active {
+  background-color: #90bef4;
+  color: #ffffff;
+}
+
+/* Graph Controls */
+.graph-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Graph Image Container */
+.graph-image-container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.graph-image-container img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Analyze Button */
+.analyze-button {
+  background-color: #73aff3;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  align-self: center;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+  margin-right:15%;
+}
+
+.analyze-button:hover {
+  background-color: #5a6a9e;
+}
+
+/* Analysis Container */
+.analysis-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  margin-right:15%;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #bfd7f7;
+}
+
+.analysis-container h3 {
+  margin: 0 0 10px;
+}
+
+/* Footer */
+.footer {
+  background-color: #8dcaff; /* Consistent background color */
+  color: #0e0101; /* Consistent text color */
+  padding: 10px;
+  text-align: center;
+}

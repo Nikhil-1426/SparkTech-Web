@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import './App.css';
 import './LandingPage.css';
-import './Graph1.css';  // Import the updated CSS file for Graph1
+import './Graph1.css';
 
 function Graph1() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -18,15 +18,14 @@ function Graph1() {
   ]);
 
   const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
+    setIsSidebarOpen(prev => !prev);
   };
 
   const fetchGraph = useCallback(async () => {
     try {
-      const response = await axios.get('http://localhost:5000/graph?timeRange=${timeRange}&district=${district}', {
+      const response = await axios.get(`http://localhost:5000/graph?timeRange=${timeRange}&district=${district}`, {
         responseType: 'blob'
       });
-
       const imageUrl = URL.createObjectURL(response.data);
       setGraphImage(imageUrl);
     } catch (error) {
@@ -87,7 +86,7 @@ function Graph1() {
           <div className="graph-controls">
             <label htmlFor="district">District: </label>
             <select id="district" value={district} onChange={(e) => setDistrict(e.target.value)}>
-              {districts.map((dist) => (
+              {districts.map(dist => (
                 <option key={dist} value={dist}>{dist}</option>
               ))}
             </select>

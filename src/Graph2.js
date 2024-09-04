@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './App.css';
 import './LandingPage.css';
-import './Graph1.css'; // Reuse the CSS for Graph1
+import './Graph1.css'; // Reuse the CSS for consistent styling
 
 const Graph2 = () => {
   const [mainParameter, setMainParameter] = useState('temperature');
@@ -23,7 +23,6 @@ const Graph2 = () => {
     const updateImageSrcs = () => {
       const formattedDistrict = district.replace(/\s+/g, '').toLowerCase();
       const formattedTimeRange = timeRange.toLowerCase();
-
       const formattedMainParameter = mainParameter.toLowerCase();
       const mainImageName = `${formattedTimeRange}.png`;
       const mainImageUrl = `/images/${formattedDistrict}/${formattedMainParameter}/${mainImageName}`;
@@ -55,7 +54,7 @@ const Graph2 = () => {
   };
 
   return (
-    <div className="graph1-container"> {/* Reuse the container class from Graph1 */}
+    <div className="graph1-container">
       <header className="top-bar">
         <div className="header-logo">
           <h1>Government of Delhi</h1>
@@ -82,10 +81,10 @@ const Graph2 = () => {
         </aside>
       )}
 
-      <main className="main-content"> {/* Reuse the main content class from Graph1 */}
+      <main className="main-content">
         <h2>Graph 2 Page</h2>
-        <div className="graph-container"> {/* Reuse the graph container class */}
-          <div className="timeframe-tabs"> {/* Reuse timeframe tabs styles */}
+        <div className="graph-container">
+          <div className="timeframe-tabs">
             {['Day', 'Week', 'Month', 'Year'].map((range) => (
               <button
                 key={range}
@@ -97,7 +96,7 @@ const Graph2 = () => {
             ))}
           </div>
 
-          <div className="graph-controls"> {/* Reuse the graph controls styles */}
+          <div className="graph-controls">
             <label htmlFor="district">District: </label>
             <select id="district" value={district} onChange={(e) => setDistrict(e.target.value)}>
               {districts.map((dist) => (
@@ -106,7 +105,7 @@ const Graph2 = () => {
             </select>
           </div>
 
-          <div className="graph-image-container"> {/* Reuse the graph image container styles */}
+          <div className="graph-image-container">
             <h3>Main Graph</h3>
             {mainImageSrc && <img src={mainImageSrc} alt="Main Graph" />}
           </div>

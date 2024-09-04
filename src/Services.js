@@ -1,7 +1,21 @@
 import React from 'react';
+import { signOut } from 'firebase/auth'; // Import signOut
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { auth } from './firebase'; // Import your Firebase auth instance
 import './Services.css';
 
 function Services() {
+  const navigate = useNavigate(); // Initialize useNavigate
+
+  const handleSignOut = async () => {
+    try {
+      await signOut(auth);
+      navigate('/'); // Redirect to the sign-in/sign-up page after sign-out
+    } catch (error) {
+      console.error('Error signing out:', error);
+    }
+  };
+
   return (
     <div className="services-page">
       <header className="App-header">
@@ -16,7 +30,9 @@ function Services() {
             <li><a href="/services">Services</a></li>
             <li><a href="/contact-us">Contact</a></li>
             <li>
-              <button className="sign-out-link">Sign Out</button>
+              <button className="sign-out-link" onClick={handleSignOut}>
+                Sign Out
+              </button>
             </li>
           </ul>
         </nav>
