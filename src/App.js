@@ -11,7 +11,6 @@ import './firebase';
 import Graph1 from './Graph1';
 import Graph2 from './Graph2';
 
-
 function App() {
   return (
     <Router>
@@ -30,6 +29,8 @@ function App() {
 }
 
 export default App;
+
+
 
 
 // import React, { useState, useEffect } from 'react';

@@ -33,7 +33,8 @@ body {
   display: flex;
   justify-content: flex-end; /* Aligns the form to the right side */
   align-items: center;
-  overflow: hidden; /* Ensures shapes don't overflow outside the box */
+  overflow: hidden;
+  margin-right:13%; /* Ensures shapes don't overflow outside the box */
 }
 
 .logo {

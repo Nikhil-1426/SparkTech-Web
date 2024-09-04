@@ -7,7 +7,7 @@ from keras.models import Sequential
 from keras.layers import LSTM, Dense
 import matplotlib.pyplot as plt
 
-data = pd.read_excel(r"C:/Users/Nikhil/Downloads/temperature1_data.xlsx", 
+data = pd.read_excel(r"C:/Users/Aditi/Downloads/temperature1_data.xlsx", 
                      index_col='Date', 
                      parse_dates=['Date'])
 data = data.values
@@ -82,7 +82,7 @@ plt.show()
 
 
 # Load the humidity data
-humidity_data = pd.read_excel(r"C:/Users/Nikhil/Downloads/humidity1_data.xlsx", 
+humidity_data = pd.read_excel(r"C:/Users/Aditi/Downloads/humidity1_data.xlsx", 
                              index_col='Date', 
                              parse_dates=['Date'])
 humidity_data = humidity_data.values

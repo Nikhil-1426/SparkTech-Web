@@ -52,41 +52,43 @@ function Dashboard() {
       </header>
 
       <main className="App-main">
-        <h1 className="dashboard-title">Dashboard</h1>
-        {user ? (
-          <table className="dashboard-table">
-            <thead>
-              <tr>
-                <th>Field</th>
-                {data.map((item) => (
-                  <th key={item.id}>User {item.id}</th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>ID</td>
-                {data.map((item) => (
-                  <td key={`id-${item.id}`}>{item.id}</td>
-                ))}
-              </tr>
-              <tr>
-                <td>Name</td>
-                {data.map((item) => (
-                  <td key={`name-${item.id}`}>{item.name}</td>
-                ))}
-              </tr>
-              <tr>
-                <td>Email ID</td>
-                {data.map((item) => (
-                  <td key={`email-${item.id}`}>{item.email}</td>
-                ))}
-              </tr>
-            </tbody>
-          </table>
-        ) : (
-          <p>Please log in to view your data.</p>
-        )}
+        <div className="dashboard-box">
+          <h1 className="dashboard-title">Dashboard</h1>
+          {user ? (
+            <table className="dashboard-table">
+              <thead>
+                <tr>
+                  <th>Field</th>
+                  {data.map((item) => (
+                    <th key={item.id}>User {item.id}</th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>ID</td>
+                  {data.map((item) => (
+                    <td key={`id-${item.id}`}>{item.id}</td>
+                  ))}
+                </tr>
+                <tr>
+                  <td>Name</td>
+                  {data.map((item) => (
+                    <td key={`name-${item.id}`}>{item.name}</td>
+                  ))}
+                </tr>
+                <tr>
+                  <td>Email ID</td>
+                  {data.map((item) => (
+                    <td key={`email-${item.id}`}>{item.email}</td>
+                  ))}
+                </tr>
+              </tbody>
+            </table>
+          ) : (
+            <p>Please log in to view your data.</p>
+          )}
+        </div>
       </main>
 
       <footer className="App-footer">

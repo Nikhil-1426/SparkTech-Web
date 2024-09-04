@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './App.css';
 import './LandingPage.css';
+import './Graph1.css'; // Reuse the CSS for Graph1
 
 const Graph2 = () => {
   const [mainParameter, setMainParameter] = useState('temperature');
@@ -12,26 +13,22 @@ const Graph2 = () => {
   const [secondaryImages, setSecondaryImages] = useState([]);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-  // List of districts
   const districts = [
     'All Districts', 'South Delhi', 'North Delhi', 'East Delhi', 'West Delhi', 
     'Central Delhi', 'North East Delhi', 'North West Delhi', 'South East Delhi', 
     'South West Delhi', 'New Delhi', 'Shahdara'
   ];
 
-  // Function to update the main and secondary image sources
   useEffect(() => {
     const updateImageSrcs = () => {
       const formattedDistrict = district.replace(/\s+/g, '').toLowerCase();
       const formattedTimeRange = timeRange.toLowerCase();
 
-      // Update main image
       const formattedMainParameter = mainParameter.toLowerCase();
       const mainImageName = `${formattedTimeRange}.png`;
       const mainImageUrl = `/images/${formattedDistrict}/${formattedMainParameter}/${mainImageName}`;
       setMainImageSrc(mainImageUrl);
 
-      // Update secondary images
       const updatedSecondaryImages = secondaryParameters.map(param => {
         const formattedParam = param.toLowerCase();
         return `/images/${formattedDistrict}/${formattedParam}/${mainImageName}`;
@@ -47,7 +44,7 @@ const Graph2 = () => {
   };
 
   const handleTimeRangeClick = (range) => {
-    setTimeRange(range); // Update the timeRange state on button click
+    setTimeRange(range);
   };
 
   const handleGraphClick = (clickedParameter) => {
@@ -58,19 +55,17 @@ const Graph2 = () => {
   };
 
   return (
-    <div className="App">
-      <header className="App-header">
+    <div className="graph1-container"> {/* Reuse the container class from Graph1 */}
+      <header className="top-bar">
         <div className="header-logo">
           <h1>Government of Delhi</h1>
         </div>
-        <nav className="App-nav">
-          <ul>
-            <li><a href="/landing">Home</a></li>
-            <li><a href="/dashboard">Dashboard</a></li>
-            <li><a href="/about-us">About Us</a></li>
-            <li><a href="/services">Services</a></li>
-            <li><a href="/contact-us">Contact</a></li>
-          </ul>
+        <nav className="nav-links">
+          <a href="/landing">Home</a>
+          <a href="/dashboard">Dashboard</a>
+          <a href="/about-us">About Us</a>
+          <a href="/services">Services</a>
+          <a href="/contact-us">Contact</a>
         </nav>
         <button className="sidebar-toggle" onClick={toggleSidebar}>
           ☰
@@ -87,16 +82,10 @@ const Graph2 = () => {
         </aside>
       )}
 
-      <main className="App-main">
+      <main className="main-content"> {/* Reuse the main content class from Graph1 */}
         <h2>Graph 2 Page</h2>
-        <div className="controls">
-          <select onChange={(e) => setDistrict(e.target.value)} value={district}>
-            {districts.map((dist) => (
-              <option key={dist} value={dist}>{dist}</option>
-            ))}
-          </select>
-
-          <div className="time-range-buttons">
+        <div className="graph-container"> {/* Reuse the graph container class */}
+          <div className="timeframe-tabs"> {/* Reuse timeframe tabs styles */}
             {['Day', 'Week', 'Month', 'Year'].map((range) => (
               <button
                 key={range}
@@ -107,17 +96,19 @@ const Graph2 = () => {
               </button>
             ))}
           </div>
-        </div>
 
-        <div className="graphs-wrapper">
-          <div className="main-graph-container">
-            {mainImageSrc && (
-              <img
-                src={mainImageSrc}
-                alt="Main Graph"
-                style={{ width: '600px', height: '400px', objectFit: 'contain' }}
-              />
-            )}
+          <div className="graph-controls"> {/* Reuse the graph controls styles */}
+            <label htmlFor="district">District: </label>
+            <select id="district" value={district} onChange={(e) => setDistrict(e.target.value)}>
+              {districts.map((dist) => (
+                <option key={dist} value={dist}>{dist}</option>
+              ))}
+            </select>
+          </div>
+
+          <div className="graph-image-container"> {/* Reuse the graph image container styles */}
+            <h3>Main Graph</h3>
+            {mainImageSrc && <img src={mainImageSrc} alt="Main Graph" />}
           </div>
 
           <div className="secondary-graphs-container">
@@ -134,7 +125,7 @@ const Graph2 = () => {
         </div>
       </main>
 
-      <footer className="App-footer">
+      <footer className="footer">
         <p>© 2024 Government of Delhi. All Rights Reserved.</p>
         <p><a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Service</a></p>
       </footer>
