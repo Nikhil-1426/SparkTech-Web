@@ -1,8 +1,21 @@
 import React from 'react';
+import { signOut } from 'firebase/auth'; // Correct import for Firebase v9 or later
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { auth } from './firebase'; // Ensure this file exports `auth` correctly
 import './ContactUs.css'; // Import the CSS file
 // import logo from './assets/logo.png'; // Import the logo image (commented out)
 
 function ContactUs() {
+  const navigate = useNavigate(); // Initialize useNavigate
+
+  const handleSignOut = async () => {
+    try {
+      await signOut(auth); // Sign out from Firebase
+      navigate('/'); // Redirect to the sign-in/sign-up page after sign-out
+    } catch (error) {
+      console.error('Error signing out:', error);
+    }
+  }
   return (
     <div className="App">
       <header className="App-header">
@@ -18,7 +31,9 @@ function ContactUs() {
             <li><a href="/services">Services</a></li>
             <li><a href="/contact-us">Contact</a></li>
             <li>
-              <button className="sign-out-link">Sign Out</button>
+              <button className="sign-out-link" onClick={handleSignOut}>
+                Sign Out
+              </button>
             </li>
           </ul>
         </nav>

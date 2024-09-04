@@ -2,9 +2,23 @@ import React, { useEffect, useState } from 'react';
 import { collection, query, where, getDocs } from 'firebase/firestore';
 import { onAuthStateChanged } from 'firebase/auth';
 import { db, auth } from './firebase'; // Import the Firestore instance and Auth
+import { signOut } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
+
 import './Dashboard.css'; // Import the updated CSS file for Dashboard
 
 function Dashboard() {
+  const navigate = useNavigate(); // Initialize useNavigate
+
+  const handleSignOut = async () => {
+    try {
+      await signOut(auth);
+      navigate('/'); // Redirect to the sign-in/sign-up page after sign-out
+    } catch (error) {
+      console.error('Error signing out:', error);
+    }
+  };
+
   const [data, setData] = useState([]); // State to hold fetched data
   const [user, setUser] = useState(null); // State to hold the logged-in user
 
@@ -45,7 +59,9 @@ function Dashboard() {
             <li><a href="/services">Services</a></li>
             <li><a href="/contact-us">Contact</a></li>
             <li>
-              <button className="sign-out-link">Sign Out</button>
+              <button className="sign-out-link" onClick={handleSignOut}>
+                Sign Out
+              </button>
             </li>
           </ul>
         </nav>

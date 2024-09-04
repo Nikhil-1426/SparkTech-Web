@@ -9,7 +9,7 @@
 .App-header {
   background-color: #8dcaff;
   padding: 10px;
-  color: #0e0101;
+  color: #f3eeee;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -33,7 +33,7 @@
 .App-nav a,
 .sign-out-link {
   text-decoration: none;
-  color: #000;
+  color: #f9f9f9;
   padding: 10px 20px;
   border-radius: 5px;
   transition: background-color 0.3s;
