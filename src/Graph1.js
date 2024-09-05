@@ -48,18 +48,23 @@ function Graph1() {
 
   return (
     <div className="graph1-container">
-      <header className="top-bar">
+      {/* Top Bar copied from ContactUs */}
+      <header className="App-header">
         <div className="header-logo">
           <h1>Government of Delhi</h1>
         </div>
-        <nav className="nav-links">
-          <a href="/landing">Home</a>
-          <a href="/dashboard">Dashboard</a>
-          <a href="/about-us">About Us</a>
-          <a href="/services">Services</a>
-          <a href="/contact-us">Contact</a>
-        </nav>
-        <button className="sidebar-toggle" onClick={toggleSidebar}>
+        <nav className="App-nav">
+          <ul>
+            <li><a href="/landing">Home</a></li>
+            <li><a href="/dashboard">Dashboard</a></li>
+            <li><a href="/about-us">About Us</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/contact-us">Contact</a></li>
+            <li>
+            </li>
+          </ul>        
+          </nav>
+          <button className="sidebar-toggle" onClick={toggleSidebar}>
           ☰
         </button>
       </header>

@@ -7,14 +7,17 @@
 
 /* Header (Top Bar) */
 .top-bar {
-  background-color: #8dcaff; /* Consistent background color */
+  min-height: 100px !important;
+  box-sizing: border-box;
+  height: 100px !important; /* Adjust the value to your desired height */
+  background-color: #8dcaff;
   padding: 10px;
-  color: #0e0101; /* Consistent text color */
+  color: #0e0101;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 55px; /* Consistent height */
 }
+
 
 .header-logo h1 {
   margin: 0;
