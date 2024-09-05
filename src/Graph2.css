@@ -19,4 +19,8 @@
     display: flex;
     justify-content: space-between;
   }
+
+  .top-bar {
+    height: 75px !important; /* New height */
+  }
   

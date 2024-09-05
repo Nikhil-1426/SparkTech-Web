@@ -1,5 +1,6 @@
 /* src/TopBar.css */
 .topbar {
+    height: 100px;
     background-color: #8dcaff;
     padding: 10px;
     color: #0e0101;
