@@ -1,26 +1,132 @@
-/* Fixed size for main and secondary graphs */
-.graph-image-container img {
-    width: 600px;   /* Fixed width for main graph */
-    height: 400px;  /* Fixed height for main graph */
-    object-fit: contain;
-    border: 1px solid #ccc;
-  }
-  
-  .secondary-graphs-container img {
-    width: 150px;   /* Fixed width for secondary graphs */
-    height: 100px;  /* Fixed height for secondary graphs */
-    object-fit: contain;
-    border: 1px solid #ccc;
-    margin: 5px;
-  }
-  
-  /* Optional: Adjust spacing for secondary graphs */
-  .secondary-graphs-container {
-    display: flex;
-    justify-content: space-between;
-  }
+/* Graph 2 Container */
+.graph2-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Full viewport height */
+}
 
-  .top-bar {
-    height: 75px !important; /* New height */
-  }
-  
+/* Top Bar for Graph 2 */
+.top-bar-graph2 {
+  min-height: 100px !important;
+  box-sizing: border-box;
+  height: 100px !important; /* Ensure consistent height with Graph 1 */
+  background-color: #8dcaff;
+  padding: 10px;
+  color: #0e0101;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Graph 2 Content */
+.main-content-graph2 {
+  margin-left: 150px; /* Adjust based on the sidebar width */
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content-graph2 h2 {
+  margin-right: 15%;
+}
+
+/* Graph 2 Image Container */
+.graph2-image-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  margin-right: 15%;
+}
+
+.graph2-image-container img {
+  width: 600px;   /* Fixed width for main graph */
+  height: 400px;  /* Fixed height for main graph */
+  object-fit: contain;
+  border: 1px solid #ccc;
+}
+
+/* Secondary Graphs for Graph 2 */
+.secondary-graphs-container-graph2 {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.secondary-graphs-container-graph2 img {
+  width: 150px;   /* Fixed width for secondary graphs */
+  height: 100px;  /* Fixed height for secondary graphs */
+  object-fit: contain;
+  border: 1px solid #ccc;
+  margin: 5px;
+}
+
+/* Timeframe Tabs for Graph 2 */
+.timeframe-tabs-graph2 {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.timeframe-tabs-graph2 button {
+  background-color: #e1ecf8;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.timeframe-tabs-graph2 button.active {
+  background-color: #90bef4;
+  color: #ffffff;
+}
+
+/* Graph Controls for Graph 2 */
+.graph-controls-graph2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Analyze Button for Graph 2 */
+.analyze-button-graph2 {
+  background-color: #73aff3;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  align-self: center;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+  margin-right: 15%;
+}
+
+.analyze-button-graph2:hover {
+  background-color: #5a6a9e;
+}
+
+/* Analysis Container for Graph 2 */
+.analysis-container-graph2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  margin-right: 15%;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #bfd7f7;
+}
+
+.analysis-container-graph2 h3 {
+  margin: 0 0 10px;
+}
