@@ -130,3 +130,26 @@
 .analysis-container-graph2 h3 {
   margin: 0 0 10px;
 }
+
+/* Fixed size for main and secondary graphs */
+.graph-image-container img {
+  width: 600px;   /* Fixed width for main graph */
+  height: 400px;  /* Fixed height for main graph */
+  object-fit: contain;
+  border: 1px solid #ccc;
+}
+
+.secondary-graphs-container img {
+  width: 150px;   /* Fixed width for secondary graphs */
+  height: 100px;  /* Fixed height for secondary graphs */
+  object-fit: contain;
+  border: 1px solid #ccc;
+  margin: 5px;
+}
+
+/* Optional: Adjust spacing for secondary graphs */
+.secondary-graphs-container {
+  display: flex;
+  justify-content: space-between;
+}
+
