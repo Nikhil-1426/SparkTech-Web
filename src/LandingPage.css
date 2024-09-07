@@ -193,7 +193,7 @@ body {
 .sidebar .close-sidebar {
   background: none;
   border: none;
-  color: white;
+  color: rgb(12, 7, 7);
   font-size: 24px;
   cursor: pointer;
   align-self: flex-end;
