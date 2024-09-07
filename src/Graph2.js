@@ -4,14 +4,18 @@ import './App.css';
 import './LandingPage.css';
 import './Graph1.css';
 import './Graph2.css'; // Reuse the CSS for consistent styling
+import temperatureLogo from './assets/temperature.jpg';
+import humidityLogo from './assets/humidity.jpg';
+import windspeedLogo from './assets/windspeed.jpg';
 
 const Graph2 = () => {
-  const [mainParameter, setMainParameter] = useState('temperature');
-  const [secondaryParameters, setSecondaryParameters] = useState(['humidity', 'windspeed', 'precipitation']);
+  const [mainParameter, setMainParameter] = useState('Temperature');
+  const [secondaryParameters, setSecondaryParameters] = useState(['Humidity', 'Windspeed', 'Precipitation']);
   const [timeRange, setTimeRange] = useState('Day');
   const [district, setDistrict] = useState('South Delhi');
   const [mainImageSrc, setMainImageSrc] = useState('');
   const [secondaryImages, setSecondaryImages] = useState([]);
+  const [logoSrcs, setLogoSrcs] = useState([]);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const districts = [
@@ -34,47 +38,64 @@ const Graph2 = () => {
         return `/images/${formattedDistrict}/${formattedParam}/${mainImageName}`;
       });
       setSecondaryImages(updatedSecondaryImages);
+
+      const updatedLogoSrcs = secondaryParameters.map(param => {
+        const formattedParam = param.toLowerCase();
+        switch (formattedParam) {
+          case 'temperature':
+            return temperatureLogo;
+          case 'humidity':
+            return humidityLogo;
+          case 'windspeed':
+            return windspeedLogo;
+          case 'precipitation':
+            return ''; // No logo needed for precipitation
+          default:
+            return ''; // Default path for other logos
+        }
+      });
+      setLogoSrcs(updatedLogoSrcs);
     };
 
     updateImageSrcs();
   }, [mainParameter, secondaryParameters, timeRange, district]);
 
   const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
+    setIsSidebarOpen(prev => !prev);
   };
 
   const handleTimeRangeClick = (range) => {
     setTimeRange(range);
   };
 
-  const handleGraphClick = (clickedParameter) => {
-    setSecondaryParameters(
-      secondaryParameters.map(param => (param === clickedParameter ? mainParameter : param))
-    );
+  const handleGraphClick = (clickedParameter, index) => {
+    setSecondaryParameters(prev => prev.map(param => param === clickedParameter ? mainParameter : param));
     setMainParameter(clickedParameter);
+
+    // Move the clicked graph to the secondary graph
+    const updatedSecondaryImages = [...secondaryImages];
+    updatedSecondaryImages[index] = mainImageSrc;
+    setSecondaryImages(updatedSecondaryImages);
+
+    setMainImageSrc(secondaryImages[index]);
   };
 
   return (
-    <div className="graph1-container">
-      {/* Top Bar copied from ContactUs */}
+    <div className="graph2-container">
       <header className="App-header">
         <div className="header-logo">
           <h1>Government of Delhi</h1>
         </div>
         <nav className="App-nav">
           <ul>
-            <li><a href="/landing">Home</a></li>
-            <li><a href="/dashboard">Dashboard</a></li>
-            <li><a href="/about-us">About Us</a></li>
-            <li><a href="/services">Services</a></li>
-            <li><a href="/contact-us">Contact</a></li>
-            <li>
-            </li>
-          </ul>        
-          </nav>
-          <button className="sidebar-toggle" onClick={toggleSidebar}>
-          ☰
-        </button>
+            <li><Link to="/landing">Home</Link></li>
+            <li><Link to="/dashboard">Dashboard</Link></li>
+            <li><Link to="/about-us">About Us</Link></li>
+            <li><Link to="/services">Services</Link></li>
+            <li><Link to="/contact-us">Contact</Link></li>
+          </ul>
+        </nav>
+        <button className="sidebar-toggle" onClick={toggleSidebar}>☰</button>
       </header>
 
       {isSidebarOpen && (
@@ -87,10 +108,10 @@ const Graph2 = () => {
         </aside>
       )}
 
-      <main className="main-content">
+      <main className="main-content-graph2">
         <h2>Graph 2 Page</h2>
         <div className="graph-container">
-          <div className="timeframe-tabs">
+          <div className="timeframe-tabs-graph2">
             {['Day', 'Week', 'Month', 'Year'].map((range) => (
               <button
                 key={range}
@@ -102,7 +123,7 @@ const Graph2 = () => {
             ))}
           </div>
 
-          <div className="graph-controls">
+          <div className="graph-controls-graph2">
             <label htmlFor="district">District: </label>
             <select id="district" value={district} onChange={(e) => setDistrict(e.target.value)}>
               {districts.map((dist) => (
@@ -111,20 +132,29 @@ const Graph2 = () => {
             </select>
           </div>
 
-          <div className="graph-image-container">
-            <h3>Main Graph</h3>
-            {mainImageSrc && <img src={mainImageSrc} alt="Main Graph" />}
-          </div>
+          <div className="graph2-layout">
+            <div className="secondary-graphs-container-graph2">
+              {secondaryImages.map((src, index) => (
+                <div key={src} className="secondary-graph">
+                  <img
+                    src={src}
+                    alt={`Secondary Graph ${secondaryParameters[index]}`}
+                    onClick={() => handleGraphClick(secondaryParameters[index], index)}
+                  />
+                  <p className="parameter-label">{secondaryParameters[index]}</p> {/* Added class for centering */}
+                </div>
+              ))}
+            </div>
 
-          <div className="secondary-graphs-container">
-            {secondaryImages.map((src, index) => (
-              <img
-                key={src}
-                src={src}
-                alt={`Graph ${secondaryParameters[index]}`}
-                onClick={() => handleGraphClick(secondaryParameters[index])}
-              />
-            ))}
+            <div className="main-graph-container">
+              <h3>Main Graph: {mainParameter}</h3>
+              {mainImageSrc && (
+                <>
+                  <img src={mainImageSrc} alt="Main Graph" />
+                  <p>{mainParameter}</p> {/* Added parameter name below the main graph */}
+                </>
+              )}
+            </div>
           </div>
         </div>
       </main>

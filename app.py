@@ -50,11 +50,14 @@ def analyze_graph():
 
         prompt=("Analyze the trends and relationships between the Y-axes of the two graphs provided. "
                   "Compare any correlations, differences, and notable patterns."
-                  "Dont give any suggestions regarding the ML model and be positive about the analysis.")
+                  "Dont give any suggestions regarding the ML model and be positive about the analysis."
+                  "Based on the temperature vs time graph display the peak temperature.")
 
         # Generate content based on the image
         response = model.generate_content([img, img2, prompt])
         analysis_result = response.text
+
+        
 
         return jsonify({'analysis': analysis_result})
 

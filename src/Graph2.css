@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
   height: 100vh; /* Full viewport height */
+  overflow-x: hidden;
 }
 
 /* Top Bar for Graph 2 */
@@ -28,39 +29,52 @@
 }
 
 .main-content-graph2 h2 {
-  margin-right: 15%;
+  margin-left: 40%;
 }
 
-/* Graph 2 Image Container */
-.graph2-image-container {
-  position: relative;
+/* Graph Layout */
+.graph2-layout {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+
+.secondary-graphs-container-graph2 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 20px;
-  margin-right: 15%;
+  margin-right: 20px; /* Space between secondary graphs and main graph */
 }
 
-.graph2-image-container img {
+.secondary-graphs-container-graph2 .secondary-graph {
+  width: 200px;   /* Adjust width for alignment */
+  height: 150px;  /* Adjust height for alignment */
+  margin-bottom: 20px; /* Space between secondary graphs */
+  text-align: center; /* Center the text */
+}
+
+.secondary-graphs-container-graph2 .secondary-graph img {
+  width: 100%;    /* Fill the container */
+  height: 100%;   /* Fill the container */
+  object-fit: contain;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+/* Main Graph Container */
+.main-graph-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-graph-container img {
   width: 600px;   /* Fixed width for main graph */
   height: 400px;  /* Fixed height for main graph */
   object-fit: contain;
   border: 1px solid #ccc;
-}
-
-/* Secondary Graphs for Graph 2 */
-.secondary-graphs-container-graph2 {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 10px;
-}
-
-.secondary-graphs-container-graph2 img {
-  width: 150px;   /* Fixed width for secondary graphs */
-  height: 100px;  /* Fixed height for secondary graphs */
-  object-fit: contain;
-  border: 1px solid #ccc;
-  margin: 5px;
 }
 
 /* Timeframe Tabs for Graph 2 */
@@ -69,6 +83,7 @@
   gap: 10px;
   margin-bottom: 20px;
   align-items: center;
+  margin-left: 32%;
 }
 
 .timeframe-tabs-graph2 button {
@@ -93,6 +108,8 @@
   background-color: #ffffff;
   padding: 10px;
   border-radius: 5px;
+  width: 585px;
+  margin-left: 32%;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -107,7 +124,6 @@
   align-self: center;
   margin-top: 20px;
   transition: background-color 0.3s ease;
-  margin-right: 15%;
 }
 
 .analyze-button-graph2:hover {
@@ -120,7 +136,6 @@
   flex-direction: column;
   align-items: center;
   margin-top: 20px;
-  margin-right: 15%;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -131,25 +146,8 @@
   margin: 0 0 10px;
 }
 
-/* Fixed size for main and secondary graphs */
-.graph-image-container img {
-  width: 600px;   /* Fixed width for main graph */
-  height: 400px;  /* Fixed height for main graph */
-  object-fit: contain;
-  border: 1px solid #ccc;
+/* Parameter Labels */
+.parameter-label {
+  margin-top: 5px;
+  font-weight: bold;
 }
-
-.secondary-graphs-container img {
-  width: 150px;   /* Fixed width for secondary graphs */
-  height: 100px;  /* Fixed height for secondary graphs */
-  object-fit: contain;
-  border: 1px solid #ccc;
-  margin: 5px;
-}
-
-/* Optional: Adjust spacing for secondary graphs */
-.secondary-graphs-container {
-  display: flex;
-  justify-content: space-between;
-}
-

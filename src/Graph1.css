@@ -59,13 +59,13 @@
   border: none;
   font-size: 24px;
   cursor: pointer;
-  color: #ffffff; /* Close button color */
+  color: #010101; /* Close button color */
   align-self: flex-end;
   transition: color 0.3s ease;
 }
 
 .close-sidebar:hover {
-  color: #0d0a01; /* Hover effect color */
+  color: #0b0a04; /* Hover effect color */
 }
 
 .sidebar ul {
