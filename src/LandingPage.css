@@ -48,7 +48,7 @@ body {
 }
 
 .App-nav a {
-  color: #000000 !important; /* Change this to your desired color */
+  color: #000000 !important;
   text-decoration: none;
   padding: 10px 15px;
   border-radius: 5px;
@@ -92,18 +92,23 @@ body {
 }
 
 .hero {
-  background-color: #b9e4f8d4;
-  padding: 40px;
+  background-image: url('C:/Users/Aditi/SparkTech-Web/src/assets/main.png'); /* Replace with the correct path to your image */
+  background-size: cover;
+  background-position: center;
+  padding: 60px;
   margin: 20px 0;
   border-radius: 8px;
+  color: white;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+  height:250px;
 }
 
 .hero h2 {
-  color: #003366;
+  color: white;
 }
 
 .hero p {
-  color: #333;
+  color: white;
   margin: 20px 0;
 }
 
@@ -211,7 +216,7 @@ body {
 }
 
 .sidebar-open .App-main {
-  margin-left: 250px; /* Adjust this based on the sidebar width */
+  margin-left: 250px;
 }
 
 .graphs-container {
@@ -243,4 +248,3 @@ body {
 .App-footer {
   background-color: #8dcaff !important;
 }
-
