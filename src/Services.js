@@ -39,10 +39,9 @@ function Services() {
       </header>
 
       <main className="services-main">
-        <section className="services-banner">
-          <h2>Services</h2>
-          <p>Our Website Provides</p>
-        </section>
+      <section className="services-banner">
+        <h2 style={{ fontFamily: 'Roboto, sans-serif', letterSpacing: '1.42px', textTransform: 'uppercase'}}>What We Offer</h2> {/* What We Offer */}
+      </section>
 
         <section className="services-content">
           <div className="service-box">

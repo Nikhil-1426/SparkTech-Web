@@ -46,8 +46,8 @@ function AboutUs() {
         <div className="about-container">
           {/* Intro Section */}
           <section className="about-intro">
-            <h2>About Us</h2>
-            <p>Learn more about the Government of Delhi and its mission to serve the public.</p>
+            <h2 style={{ fontFamily: 'Roboto, sans-serif', letterSpacing: '1.42px', textTransform: 'uppercase'}}>About Us</h2>
+            <p style={{ fontFamily: 'Roboto, sans-serif', letterSpacing: '1.42px'}}>Learn more about the Government of Delhi and its mission to serve the public.</p>
           </section>
 
           {/* Details Section */}
