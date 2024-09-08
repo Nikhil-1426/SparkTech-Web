@@ -2,7 +2,7 @@
 .services-page {
   font-family: Arial, sans-serif;
   color: #fff;
-  background-color: #7ecaef;
+  background-color: #b3d9fc;
   text-align: center;
   min-height: 100vh;
   display: flex;
@@ -83,7 +83,7 @@
   margin-top:1%;
 }
 .services-banner p{
-  margin-top:-1.5%;
+  margin-top:3.5%;
 }
 
 .services-banner p {

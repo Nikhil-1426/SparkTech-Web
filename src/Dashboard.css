@@ -8,7 +8,7 @@
   height: 100vh;
   font-family: Arial, sans-serif;
   color: #fff;
-  background-color: #5c99d2;
+  background: linear-gradient(135deg, #e4f0f8, #2a7ef4);;
   overflow-x:hidden;
 }
 
@@ -78,7 +78,7 @@
 
 /* Box Around Dashboard and Table */
 .dashboard-box {
-  background: linear-gradient(135deg, #acd7f4, #71b8f6);
+  background: linear-gradient(135deg, #9ad2f8, #3d88f2);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;

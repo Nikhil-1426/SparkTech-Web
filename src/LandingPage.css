@@ -62,7 +62,7 @@ body {
 }
 
 .App-nav a:hover, .sign-out-link:hover {
-  background-color: #555;
+  background-color: #f1e9e9;
 }
 
 /* Hero Section Styles */
@@ -84,6 +84,10 @@ body {
   color: white;
   margin: 0;
   text-align:left;
+  
+}
+.hero h3{
+  font-size:60px;
 }
 
 .hero p {
@@ -96,14 +100,17 @@ body {
 }
 
 .cta-button {
-  padding: 10px 20px;
-  background-color: #005b99;
-  color: white;
+  padding: 8px 16px; /* Adjusted padding for smaller button */
+  background-color: #c2e6fc;
+  color: rgb(8, 9, 12);
   border: none;
+  width: auto; /* Removed fixed width to fit content */
+  height: auto; /* Removed fixed height to fit content */
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  margin-left:20%;
+  margin-left: 20%;
+  font-size: 14px; /* Adjust font size to fit smaller button */
 }
 
 .cta-button:hover {
