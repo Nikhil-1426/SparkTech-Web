@@ -67,14 +67,10 @@
 
 /* Banner and Content Styles */
 .services-banner {
-  background-color: #78c1f9;
-  color: #fff;
-  padding: 20px;
+  color: #000; /* Use any color you like */
   margin: 20px auto;
-  border-radius: 8px;
-  max-width: 300px;
-  height:100px;
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  padding-top: 30px;
 }
 
 .services-banner h2 {

@@ -10,6 +10,7 @@ import './App.css';
 import './firebase';
 import Graph1 from './Graph1';
 import Graph2 from './Graph2';
+import DuckCurve from './DuckCurve';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} /> {/* Dashboard page */}
         <Route path="/graph1" element={<Graph1 />} /> {/* Graph 1 page */}
         <Route path="/graph2" element={<Graph2 />} /> {/* Graph 2 page */}
+        <Route path="/duckcurve" element={<DuckCurve />} /> {/* Duck Curve page */}
       </Routes>
     </Router>
   );

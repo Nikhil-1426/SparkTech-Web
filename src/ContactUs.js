@@ -42,8 +42,8 @@ function ContactUs() {
       <main className="App-main">
         <div className="contact-container">
           <div className="contact-intro">
-            <h2>Contact Us</h2>
-            <p>Welcome to our contact page! Feel free to reach out to us using the form below.</p>
+            <h2 style={{ fontFamily: 'Roboto, sans-serif', letterSpacing: '1.42px', textTransform: 'uppercase'}}>Contact Us</h2>
+            <p style={{ fontFamily: 'Roboto, sans-serif', letterSpacing: '0.7px'}}>Welcome to our contact page! Feel free to reach out to us using the form below.</p>
           </div>
 
           <div className="contact-form">
