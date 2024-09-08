@@ -14,9 +14,10 @@ function Graph1() {
   const [timeRange, setTimeRange] = useState('Day');
   const [district, setDistrict] = useState('South Delhi');
   const [districts] = useState([
-    'South Delhi', 'North Delhi', 'East Delhi', 'West Delhi',
-    'Central Delhi', 'New Delhi', 'North West Delhi', 'South West Delhi',
-    'North East Delhi', 'Shahadara'
+    'Central Delhi', 'East Delhi', 'New Delhi', 'North Delhi',
+  'North East Delhi', 'North West Delhi', 'Shahadara', 
+  'South Delhi', 'South East Delhi', 'South West Delhi', 
+  'West Delhi'
   ]);
 
   const filePath = "http://localhost:5000/get-excel-file"; // Make sure this endpoint is correctly set up
