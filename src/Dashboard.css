@@ -1,12 +1,14 @@
 /* General Styles */
-
+.body{
+  background-color: #b3d9fc;
+}
 .dashboard-container {
   display: flex;
   flex-direction: column;
   height: 100vh;
   font-family: Arial, sans-serif;
   color: #fff;
-  background-color: #cadbe7;
+  background-color: #5c99d2;
   overflow-x:hidden;
 }
 

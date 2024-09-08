@@ -2,7 +2,7 @@
 .services-page {
   font-family: Arial, sans-serif;
   color: #fff;
-  background-color: #d6e2ea;
+  background-color: #7ecaef;
   text-align: center;
   min-height: 100vh;
   display: flex;
@@ -72,13 +72,18 @@
   padding: 20px;
   margin: 20px auto;
   border-radius: 8px;
-  max-width: 500px;
+  max-width: 300px;
+  height:100px;
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
 }
 
 .services-banner h2 {
   font-size: 36px;
   margin-bottom: 5px;
+  margin-top:1%;
+}
+.services-banner p{
+  margin-top:-1.5%;
 }
 
 .services-banner p {
@@ -94,7 +99,7 @@
 }
 
 .service-box {
-  background: linear-gradient(135deg, #acd7f4, #71b8f6);
+  background: linear-gradient(135deg, #9ad2f8, #3d88f2);
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1), 0 6px 12px rgba(0, 0, 0, 0.1);
