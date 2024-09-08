@@ -7,7 +7,7 @@
 }
 
 .App-header {
-  background-color: #8dcaff;
+  background-color: #7ecaef;
   padding: 10px;
   color: #f3eeee;
   display: flex;
@@ -69,21 +69,21 @@
 /* Main Content Section */
 .App-main {
   padding: 40px 20px;
-  background-color: #d6e2ea;
+  background-color: #b3d9fc;
 }
 
 /* About Us Section */
 .about-container {
   max-width: 900px;
   margin: 0 auto;
-  background: linear-gradient(135deg, #acd7f4, #71b8f6);
+  background: linear-gradient(135deg, #9ad2f8, #71b8f6,#2c81f7);
   padding: 40px;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .about-intro {
-  background-color: #d5ecf7d4;
+  background-color: #ccebf9d4;
   padding: 40px;
   margin: 20px 0;
   border-radius: 8px;

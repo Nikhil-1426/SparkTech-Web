@@ -41,7 +41,7 @@ function Services() {
       <main className="services-main">
         <section className="services-banner">
           <h2>Services</h2>
-          <p>Our website provides</p>
+          <p>Our Website Provides</p>
         </section>
 
         <section className="services-content">
