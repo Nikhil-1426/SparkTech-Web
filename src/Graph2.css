@@ -40,6 +40,7 @@
   margin-top: 20px;
 }
 
+/* Secondary Graphs Container */
 .secondary-graphs-container-graph2 {
   display: flex;
   flex-direction: column;
@@ -50,7 +51,7 @@
 .secondary-graphs-container-graph2 .secondary-graph {
   width: 200px;   /* Adjust width for alignment */
   height: 150px;  /* Adjust height for alignment */
-  margin-bottom: 20px; /* Space between secondary graphs */
+  margin-bottom: 20%; /* Single-line space between secondary graphs */
   text-align: center; /* Center the text */
 }
 
