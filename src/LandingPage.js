@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { getAuth, signOut } from 'firebase/auth';
 import './App.css';
 import './LandingPage.css';
-// import logo from './assets/logo.png';
 
 function LandingPage() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -65,10 +64,17 @@ function LandingPage() {
         <section className="hero">
           <h2>Welcome to the Official Government Portal of Delhi</h2>
           <p>Your gateway to information, services, and updates from the Government of Delhi.</p>
-          <button className="cta-button">Learn More</button>
+          <a href="https://delhi.gov.in/" target="_blank" rel="noopener noreferrer" className="cta-button">
+            Learn More
+          </a>
         </section>
-        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.""Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.""Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.""Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.""Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
 
+        <p class="left-align">About The Project</p>
+        <p class="left-align"> The Government of Delhi is committed to ensuring the efficient and reliable management of power resources to meet the dynamic and ever-growing energy demands of the National Capital Territory (NCT). In pursuit of this objective, this project leverages state-of-the-art technologies to forecast power consumption patterns and optimize electricity distribution across the region.</p> 
+        <p class="left-align"> The Government of Delhi is committed to ensuring the efficient and reliable management of power resources to meet the dynamic and ever-growing energy demands of the National Capital Territory (NCT). In pursuit of this objective, this project leverages state-of-the-art technologies to forecast power consumption patterns and optimize electricity distribution across the region.</p> 
+        <p class="left-align"> Recognizing the unique challenges posed by Delhi’s highly variable power demand—ranging from significant seasonal fluctuations to daily peak and off-peak loads—this project employs advanced machine learning models to analyze critical weather parameters such as temperature, humidity, wind speed, and precipitation. These variables are known to have a direct impact on electricity consumption, and through precise data analysis, the system generates accurate forecasts to predict power demand for all 11 districts of Delhi. By doing so, it helps bridge the gap between power supply and consumption, enabling informed decision-making for energy procurement and distribution.</p> 
+        <p class="left-align"> The project’s interactive portal provides a user-friendly interface for real-time data visualization, offering insights into power consumption trends and detailed analysis of the relationship between weather conditions and electricity usage. The system also allows for historical comparisons and future projections, empowering authorities to better understand the factors influencing power demand and take proactive measures to ensure grid stability. This initiative is aligned with the Government’s vision of sustainable energy management and supports the broader objective of transitioning towards a more resilient and environmentally responsible energy infrastructure.</p>
+        <p class="left-align"> With an emphasis on scalability, the project is designed to evolve alongside Delhi's rapid urban expansion and increasing energy requirements, ensuring that the capital remains at the forefront of innovation in power management. Through this innovative approach, we aim to deliver a comprehensive solution that not only enhances operational efficiency but also contributes to the Government of Delhi’s commitment to providing uninterrupted, affordable, and sustainable power to its citizens.</p>
       </main>
 
       <footer className="App-footer">
@@ -80,3 +86,4 @@ function LandingPage() {
 }
 
 export default LandingPage;
+

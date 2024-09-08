@@ -1,9 +1,11 @@
+/* General Body Styles */
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
   background-color: #f4f4f4;
 }
 
+/* Main App Styles */
 .App {
   text-align: center;
 }
@@ -18,6 +20,7 @@ body {
   position: relative;
 }
 
+/* Header Logo Styles */
 .header-logo {
   display: flex;
   align-items: center;
@@ -31,9 +34,10 @@ body {
 }
 
 .header-logo h1 {
-  color: #1515a0; /* Change this to your desired color */
+  color: #1515a0;
 }
 
+/* Navigation Styles */
 .App-nav ul {
   display: flex;
   list-style: none;
@@ -47,20 +51,9 @@ body {
   align-items: center;
 }
 
-.App-nav a {
-  color: #000000 !important;
-  text-decoration: none;
-  padding: 10px 15px;
-  border-radius: 5px;
-  transition: background-color 0.3s;
-  font-size: 16px;
-  font-weight: bold;
-}
-
-.App-nav a,
-.sign-out-link {
-  text-decoration: none;
+.App-nav a, .sign-out-link {
   color: #ffffff;
+  text-decoration: none;
   padding: 10px 15px;
   border-radius: 5px;
   transition: background-color 0.3s;
@@ -68,29 +61,11 @@ body {
   font-weight: bold;
 }
 
-.App-nav a:hover,
-.sign-out-link:hover {
+.App-nav a:hover, .sign-out-link:hover {
   background-color: #555;
 }
 
-.sign-out-link {
-  border: none;
-  background: none;
-  cursor: pointer;
-  padding: 10px 15px;
-  font-size: 16px;
-  font-weight: bold;
-}
-
-.graph-section {
-  margin-top: 40px;
-  text-align: center;
-}
-
-.App-main {
-  padding: 20px;
-}
-
+/* Hero Section Styles */
 .hero {
   background-image: url('C:/Users/Aditi/SparkTech-Web/src/assets/main.png'); /* Replace with the correct path to your image */
   background-size: cover;
@@ -100,16 +75,24 @@ body {
   border-radius: 8px;
   color: white;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
-  height:250px;
+  height: 250px;
+  font-size: 20px;
+  text-align: left;
 }
 
 .hero h2 {
   color: white;
+  margin: 0;
+  text-align:left;
 }
 
 .hero p {
   color: white;
   margin: 20px 0;
+  text-align:left;
+}
+.left-align {
+  text-align: left;
 }
 
 .cta-button {
@@ -119,36 +102,26 @@ body {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left:20%;
 }
 
 .cta-button:hover {
   background-color: #003366;
 }
 
-.info-section {
-  text-align: left;
-  margin: 20px 0;
-}
 
-.info-section h3 {
-  color: #003366;
-}
-
-.info-section ul {
-  list-style-type: disc;
-  margin: 20px 0 0 20px;
-  padding: 0;
-}
-
+/* Footer Styles */
 .App-footer {
   background-color: #8dcaff;
-  color: rgb(0, 0, 0);
+  color: #000000;
   padding: 20px;
   margin-top: 20px;
+  font-size: 14px;
 }
 
 .App-footer a {
-  color: rgb(0, 0, 0) !important;
+  color: #000000;
   text-decoration: none;
   margin: 0 10px;
 }
@@ -185,7 +158,7 @@ body {
 }
 
 .sidebar ul li a {
-  color: rgb(96, 48, 229);
+  color: #6030e5;
   text-decoration: none;
   font-size: 18px;
   font-weight: bold;
@@ -198,7 +171,7 @@ body {
 .sidebar .close-sidebar {
   background: none;
   border: none;
-  color: rgb(12, 7, 7);
+  color: #0c0707;
   font-size: 24px;
   cursor: pointer;
   align-self: flex-end;
@@ -217,34 +190,4 @@ body {
 
 .sidebar-open .App-main {
   margin-left: 250px;
-}
-
-.graphs-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.main-graph-container {
-  flex: 3;
-  margin-right: 20px;
-}
-
-.small-graphs-container {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  justify-content: space-between;
-}
-
-.small-graphs-container img {
-  margin-bottom: 20px;
-}
-
-.App-header {
-  background-color: #8dcaff !important;
-}
-
-.App-footer {
-  background-color: #8dcaff !important;
 }
