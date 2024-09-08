@@ -69,7 +69,7 @@ function LandingPage() {
           </a>
         </section>
 
-        <p class="left-align">About The Project</p>
+        <h3 class="left-align">About The Project</h3>
         <p class="left-align"> The Government of Delhi is committed to ensuring the efficient and reliable management of power resources to meet the dynamic and ever-growing energy demands of the National Capital Territory (NCT). In pursuit of this objective, this project leverages state-of-the-art technologies to forecast power consumption patterns and optimize electricity distribution across the region.</p> 
         <p class="left-align"> The Government of Delhi is committed to ensuring the efficient and reliable management of power resources to meet the dynamic and ever-growing energy demands of the National Capital Territory (NCT). In pursuit of this objective, this project leverages state-of-the-art technologies to forecast power consumption patterns and optimize electricity distribution across the region.</p> 
         <p class="left-align"> Recognizing the unique challenges posed by Delhi’s highly variable power demand—ranging from significant seasonal fluctuations to daily peak and off-peak loads—this project employs advanced machine learning models to analyze critical weather parameters such as temperature, humidity, wind speed, and precipitation. These variables are known to have a direct impact on electricity consumption, and through precise data analysis, the system generates accurate forecasts to predict power demand for all 11 districts of Delhi. By doing so, it helps bridge the gap between power supply and consumption, enabling informed decision-making for energy procurement and distribution.</p> 
