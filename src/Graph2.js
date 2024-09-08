@@ -105,12 +105,13 @@ const Graph2 = () => {
           <ul>
             <li><Link to="/graph1">Graph 1</Link></li>
             <li><Link to="/graph2">Graph 2</Link></li>
+            <li><Link to="/duckcurve">Duck Curve</Link></li>
           </ul>
         </aside>
       )}
 
       <main className="main-content-graph2">
-        <h2>Graph 2 Page</h2>
+        <h2>Parameters' Graphs</h2>
         <div className="graph-container">
           <div className="timeframe-tabs-graph2">
             {['Day', 'Week', 'Month', 'Year'].map((range) => (
@@ -125,7 +126,7 @@ const Graph2 = () => {
           </div>
 
           <div className="graph-controls-graph2">
-            <label htmlFor="district">District: </label>
+            <label htmlFor="district">District : </label>
             <select id="district" value={district} onChange={(e) => setDistrict(e.target.value)}>
               {districts.map((dist) => (
                 <option key={dist} value={dist}>{dist}</option>
@@ -148,7 +149,7 @@ const Graph2 = () => {
             </div>
 
             <div className="main-graph-container">
-              <h3>Main Graph: {mainParameter}</h3>
+              <h3>Main Graph : {mainParameter}</h3>
               {mainImageSrc && (
                 <>
                   <img src={mainImageSrc} alt="Main Graph" />

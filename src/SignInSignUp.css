@@ -64,7 +64,7 @@ body {
 
 .shape {
   position: absolute;
-  opacity: 0.4; /* Translucent effect */
+  opacity: 0.4;
 }
 
 .shape1 {
@@ -85,13 +85,13 @@ body {
   border-radius: 25% / 50%; /* Oblong shape */
 }
 
-.shape3 {
-  background: rgba(70, 130, 180, 0.5); /* SteelBlue */
+/* .shape3 {
+  background: rgba(70, 130, 180, 0.5); 
   width: 300px;
   height: 300px;
   top: 60%;
   left: 5%;
-}
+} */
 
 .shape4 {
   background: rgba(135, 206, 250, 0.4); /* LightSkyBlue with more translucency */
