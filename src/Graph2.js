@@ -11,7 +11,7 @@ import windspeedLogo from './assets/windspeed.jpg';
 const Graph2 = () => {
   const [mainParameter, setMainParameter] = useState('Temperature');
   const [secondaryParameters, setSecondaryParameters] = useState(['Humidity', 'Windspeed', 'Precipitation']);
-  const [timeRange, setTimeRange] = useState('Day');
+  const [timeRange, setTimeRange] = useState('Year');
   const [district, setDistrict] = useState('South Delhi');
   const [mainImageSrc, setMainImageSrc] = useState('');
   const [secondaryImages, setSecondaryImages] = useState([]);
@@ -19,9 +19,10 @@ const Graph2 = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const districts = [
-    'All Districts', 'South Delhi', 'North Delhi', 'East Delhi', 'West Delhi', 
-    'Central Delhi', 'North East Delhi', 'North West Delhi', 'South East Delhi', 
-    'South West Delhi', 'New Delhi', 'Shahdara'
+    'Central Delhi', 'East Delhi', 'New Delhi', 'North Delhi',
+  'North East Delhi', 'North West Delhi', 'Shahadara', 
+  'South Delhi', 'South East Delhi', 'South West Delhi', 
+  'West Delhi'
   ];
 
   useEffect(() => {
