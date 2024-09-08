@@ -67,15 +67,15 @@ body {
 
 /* Hero Section Styles */
 .hero {
-  background-image: url('C:/Users/Aditi/SparkTech-Web/src/assets/main.png'); /* Replace with the correct path to your image */
+  background-image: url("C:/Users/Nikhil/Nikhil Data/Coding/Projects/SIH' 24/SparkTech-Web/src/assets/main.png"); /* Replace with the correct path to your image */
   background-size: cover;
   background-position: center;
   padding: 60px;
   margin: 20px 0;
   border-radius: 8px;
   color: white;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
-  height: 250px;
+  /* text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7); */
+  height: 200px;
   font-size: 20px;
   text-align: left;
 }

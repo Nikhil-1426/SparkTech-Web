@@ -6,7 +6,7 @@ CORS(app)  # This will enable CORS for all routes
 
 @app.route('/get-excel-file', methods=['GET'])
 def get_excel_file():
-    file_path = "C:/Users/Aditi/Downloads/final_dataset.xlsx"
+    file_path = "C:/Users/Nikhil/Nikhil Data/Coding/Projects/SIH' 24/final_dataset.xlsx"
     return send_file(file_path, as_attachment=True)
 
 if __name__ == "__main__":
