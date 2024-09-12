@@ -6,6 +6,7 @@
 - [Project Overview](#project-overview)
 - [Features](#features)
 - [Technologies Used](#technologies-used)
+- [Screenshots](#screenshots)
 - [Installation](#installation)
 - [About Us](#about-us)
 
@@ -34,6 +35,11 @@ Key goals:
 - **Backend**: NodeJS, Flask
 - **Machine Learning**: Python
 - **Other Tools**: Gemini API for data analysis, Chart.js for graphing
+
+## Screenshots
+<pre>
+<img src = "https://github.com/Nikhil-1426/SparkTech-Web/blob/main/static/LandingPage.jpg?raw=true" width = "295"> <img src = "https://github.com/Nikhil-1426/SparkTech-Web/blob/main/static/Services.jpg?raw=true" width = "300"> <img src = "https://github.com/Nikhil-1426/SparkTech-Web/blob/main/static/Graph1.jpg?raw=true" width = "295"> <img src = "https://github.com/Nikhil-1426/SparkTech-Web/blob/main/static/Graph2.jpg?raw=true" width = "310">
+</pre>
 
 ## Installation
 
