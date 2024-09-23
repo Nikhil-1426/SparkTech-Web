@@ -67,7 +67,7 @@ Before running the project locally, ensure you have the following installed:
     ```
     Run the backend using Flask:
     ```bash
-        python app.py
+    python app.py
     ```
 
 3. Install frontend dependencies:
