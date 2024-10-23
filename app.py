@@ -23,7 +23,7 @@ app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
 
 # Initialize the Gemini API with your API key
-api_key = "AIzaSyAdGwGGhCx7vmy4trLZKEJftgQ2VZqIlbI"
+api_key = "AIzaSyBQ8MpsIQpjz5ESbp_FqSpI4xAHv0hCfy8"
 genai.configure(api_key=api_key)
 
 @app.route('/get-excel-file', methods=['GET'])
